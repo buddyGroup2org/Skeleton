@@ -101,7 +101,7 @@ public class ArrayHelpers {
      * @param count int - The size of the new int[] "destinationArray".
      * @return void -> destinationArray is updated because int[] is reference type.
      *
-     * @author Georgi Benchev
+     * @author Georgi Benchev copy
      */
     public static void copy(int[] sourceArray, int[] destinationArray, int count) {
         for (int i = 0; i < Math.min(count, sourceArray.length); i++) {
