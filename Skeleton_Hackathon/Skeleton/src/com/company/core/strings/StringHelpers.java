@@ -4,11 +4,38 @@ package com.company.core.strings;
 public class StringHelpers {
 
     public static String abbreviate(String source, int maxLength) {
-        return null;
+        //Daniel
+        if (source.length() <= maxLength){
+            return source;
+        }
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < maxLength; i++) {
+            result.append(source.charAt(i));
+        }
+        if (source.length() > maxLength){
+            result.append("...");
+        }
+        return result.toString();
     }
 
     public static String capitalize(String source) {
-        return null;
+        //Daniel
+        //Checking if the string is empty.
+        //Creating a StringBuilder which copies the contents of the original source string.
+        //Iterate through the symbols If it is the first character, it is converted to an uppercase letter
+        // using Character.toUpperCase() and replaced in StringBuilder using setCharAt().
+        //Return the result.
+        if (source.length() == 0){
+            return source;
+        }
+        StringBuilder result = new StringBuilder(source);
+        for (int i = 0; i < result.length(); i++) {
+            if (i == 0){
+                result.setCharAt(i, Character.toUpperCase(result.charAt(i)));
+            }
+
+        }
+        return result.toString();
     }
 
     public static String concat(String string1, String string2) {
@@ -32,17 +59,40 @@ public class StringHelpers {
     }
 
     public static String pad(String source, int length, char paddingSymbol) {
-        return null;
-
+        int index = 0;
+        String result = "";
+        int difference = length - source.length();
+        if(source.length() > length){
+            return source;
+        }
+        while(index < difference/ 2){
+            result += paddingSymbol;
+            index++;
+        }
+        index = 0;
+        result += source;
+        while(index < difference / 2){
+            result += paddingSymbol;
+            index++;
+        }
+        return  result;
     }
 
     public static String padEnd(String source, int length, char paddingSymbol) {
-        return null;
+        String result = source;
+        for (int i = result.length(); i < length; i++) {
+            result+= paddingSymbol;
+        }
+        return result;
     }
 
     public static String padStart(String source, int length, char paddingSymbol) {
-        return null;
-
+        String result = "";
+        for (int i = 0; i < length - source.length(); i++) {
+            result += paddingSymbol;
+        }
+        result += source;
+        return result;
     }
 
     public static String repeat(String source, int times) {
