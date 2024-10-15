@@ -2,7 +2,7 @@ package com.company.core.strings;
 
 @SuppressWarnings("StringConcatenationInLoop")
 public class StringHelpers {
-    //Daniel
+    //Daniel Kolev
     //Length Check:
     //If the length of source is less than or equal to maxLength, the method simply returns the original string, unchanged.
     //Initializing StringBuilder to keep the String part.
@@ -23,7 +23,7 @@ public class StringHelpers {
         return result.toString();
     }
 
-    //Daniel
+    //Daniel Kolev
     //Checking if the string is empty.
     //Creating a StringBuilder which copies the contents of the original source string.
     //Iterate through the symbols If it is the first character, it is converted to an uppercase letter
@@ -43,13 +43,14 @@ public class StringHelpers {
         }
         return result.toString();
     }
-
+    //Daniel Kolev
     //Concatenates the two strings string1 and string2.
     //Return the result.
     public static String concat(String string1, String string2) {
         String result = string1 + string2;
         return result;
     }
+    //Daniel Kolev
     //Iterates through each character in the source string.
     //Check if the current element is equal to the symbol.
     //If it is return true, else return false.
@@ -105,7 +106,7 @@ public class StringHelpers {
         }
         return -1;
     }
-
+    //Daniel Kolev
     //Initialization:
     //A loop that iterates through source in reverse order, starting from the last character.
     //Symbol comparison.
@@ -192,6 +193,7 @@ public class StringHelpers {
         result += source;
         return result;
     }
+    //Daniel Kolev
     //Initializing a variable that will store the repeating string.
     //Null check: If times = 0, just returns the original source string.
     //Initializing a loop that iterating (times) times.
