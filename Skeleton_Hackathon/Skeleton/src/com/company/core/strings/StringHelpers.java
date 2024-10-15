@@ -192,9 +192,20 @@ public class StringHelpers {
         result += source;
         return result;
     }
-
+    //Initializing a variable that will store the repeating string.
+    //Null check: If times = 0, just returns the original source string.
+    //Initializing a loop that iterating (times) times.
+    //Return the result.
     public static String repeat(String source, int times) {
-        return null;
+        String repeatingWord = "";
+        if (times == 0) {
+            repeatingWord = source;
+            return repeatingWord;
+        }
+        for (int i = 0; i < times; i++) {
+            repeatingWord += source;
+        }
+        return repeatingWord;
     }
 
     public static String reverse(String source) {
