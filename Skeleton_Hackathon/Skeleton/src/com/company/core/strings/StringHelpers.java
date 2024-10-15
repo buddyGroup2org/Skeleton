@@ -157,7 +157,7 @@ public class StringHelpers {
      *
      * @param source The string that will be checked.
      * @param target The char that will be used for the check
-     * @return A boolean - true if "source" starts with "target", false if not
+     * @return A boolean - true if "source" starts with "target" and false if not
      *
      * @author Georgi Benchev
      */
