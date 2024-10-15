@@ -99,14 +99,13 @@ public class ArrayHelpers {
 
 
     // Checks if the input index is valid in the array
+    // If the array is empty, result should be "false"
     // Chavdar Tsvetkov
     public static boolean isValidIndex(int[] source, int index) {
-
+        if (source.length == 0){
+            return false;
+        }
         for (int i = 0; i <= source.length - 1 ; i++) {
-
-            if (source.length == 0){
-                return false;
-            }
 
             if (index == source[i]){
                 return true;
@@ -115,8 +114,26 @@ public class ArrayHelpers {
         return false;
     }
 
+
+
+    // Returns the last index of the array
+    // If the array is empty, result should be -1
+    // If the target is out of bounds, result should be -1
+    // Chavdar Tsvetkov
+
     public static int lastIndexOf(int[] source, int target) {
-        return 0;
+
+            if (source.length == 0){
+                return -1;
+            }
+
+        for (int i = 0; i <= source.length - 1 ; i++) {
+
+            if (source.length - 1 == target){
+                return source[source.length - 1];
+            }
+        }
+        return -1;
     }
 
     public static int[] removeAllOccurrences(int[] source, int element) {
