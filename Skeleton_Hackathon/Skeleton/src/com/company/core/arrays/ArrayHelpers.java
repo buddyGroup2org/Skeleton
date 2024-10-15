@@ -153,17 +153,18 @@ public class ArrayHelpers {
         return -1;
     }
 
-    /**
-     * Removes all occurrences of <code>element</code> in array <code>source</code>.
-     *
-     * @param int[] source an array from which we read its elements
-     * @param int element The element which we need to remove
-     * @return An array that represents the version of the array source
-     * which removes all occurrences of element n in it.
-     *
-     * @author Ivan Ivanov
-     */
+
     public static int[] removeAllOccurrences(int[] source, int element) {
+        /**
+         * Removes all occurrences of <code>element</code> in array <code>source</code>.
+         *
+         * @param int[] source an array from which we read its elements
+         * @param int element The element which we need to remove
+         * @return An array that represents the version of the array source
+         * which removes all occurrences of element n in it.
+         *
+         * @author Ivan Ivanov
+         */
         int count = 0;
         for (int i = 0; i < source.length; i++) {
             if (source[i] == element) {
@@ -180,17 +181,17 @@ public class ArrayHelpers {
         return result;
     }
 
+
     public static void reverse(int[] arrayToReverse) {
-        /**
-         * Removes all occurrences of <code>element</code> in array <code>source</code>.
+        /***
+         * Reverses array <code>arrayToReverse</code> to the same array.
          *
-         * @param int[] source an array from which we read its elements
-         * @param int element The element which we need to remove
-         * @return An array that represents the version of the array source
-         * which removes all occurrences of element n in it.
+         * @param int[] arrayToReverse as the array that needs to be reversed
+         * Reverses the contents of ArrayToRevers by creating a new array in the method and then
+         * overwriting the contents of the original array.
          *
          * @author Ivan Ivanov
-         */
+         **/
         int[] result = new int[arrayToReverse.length];
         for (int i = arrayToReverse.length - 1 , j = 0;  i >= 0 && j < result.length; i--, j++) {
             result[j] = arrayToReverse[i];
