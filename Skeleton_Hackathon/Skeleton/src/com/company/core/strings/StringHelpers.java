@@ -68,6 +68,11 @@ public class StringHelpers {
         return 0;
     }
 
+    //Initialization:
+    //A loop that iterates through source in reverse order, starting from the last character.
+    //Symbol comparison.
+    //Check for character.
+    //Return position.
     public static int lastIndexOf(String source, char symbol) {
         boolean isFound = false;
         int position = 0;
