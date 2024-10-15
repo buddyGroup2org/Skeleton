@@ -99,9 +99,9 @@ public class ArrayHelpers {
      * @param sourceArray int[] - The array from witch we take the numbers.
      * @param destinationArray int[] - The integer that is updated.
      * @param count int - The size of the new int[] "destinationArray".
-     * @return void -> destinationArray is updated because int[] is reference type.
+     * @return void -> "destinationArray" is updated because int[] is reference type.
      *
-     * @author Georgi Benchev copy
+     * @author Georgi Benchev
      */
     public static void copy(int[] sourceArray, int[] destinationArray, int count) {
         for (int i = 0; i < Math.min(count, sourceArray.length); i++) {
@@ -109,16 +109,25 @@ public class ArrayHelpers {
         }
     }
 
-    // makes copy of part of int[] "sourceArray" with size "count" elements
-    // starting at index "sourceStartIndex" in to int[] "destinationArray" at position starting at "destStartIndex"
-    // Georgi Benchev
+
+    /**
+     * Copies "count" elements from int[] "sourceArray" starting at index "sourceStartIndex"
+     * in to int[] "destinationArray" at position starting at "destStartIndex"
+     *
+     * @param sourceArray int[] - The array from witch we take the numbers.
+     * @param sourceStartIndex int - The start index for "sourceArray".
+     * @param destinationArray int[] - The int[] that is updated.
+     * @param destStartIndex int - The start index for the update of "destinationArray".
+     * @param count int - The amount of numbers that we copy from "sourceArray".
+     * @return void -> destinationArray is updated because int[] is reference type.
+     *
+     * @author Georgi Benchev
+     */
     public static void copyFrom(int[] sourceArray, int sourceStartIndex,
                                 int[] destinationArray, int destStartIndex, int count) {
         for (int i = destStartIndex; i < count + destStartIndex; i++) {
             destinationArray[i] = sourceArray[i - destStartIndex + sourceStartIndex];
         }
-
-
     }
 
     // fills every int in int[] "source" with int "element"
