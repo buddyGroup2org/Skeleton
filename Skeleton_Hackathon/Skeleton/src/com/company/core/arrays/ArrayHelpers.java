@@ -90,6 +90,15 @@ public class ArrayHelpers {
     }
 
     public static int firstIndexOf(int[] source, int target) {
+        /**
+         * Finds the first index of <code>target<code/> within <code>source<code/>.
+         *
+         * @param source int[] - The array to check in
+         * @param target int - The element to check for
+         * @return int - The first index of target within source, otherwise, -1
+         *
+         * @author Lachezar Lazarov
+         */
         int result = -1;
         for (int i = 0; i < source.length; i++) {
             if(source[i] == target){
@@ -100,8 +109,17 @@ public class ArrayHelpers {
         return result;
     }
 
-    public static int[] insert(int[] source, int index, int element) {return new int[1];
     public static int[] insert(int[] source, int index, int element) {
+        /**
+         * Inserts <code>element<code/>> at index <code>index<code/>> in <code>source<code/>>.
+         *
+         * @param source int[] - The array to insert in
+         * @param index int - The index to insert at
+         * @param element int - The element to insert
+         * @return int[] - A new array with element in it
+         *
+         * @author Lachezar Lazarov
+         */
         int[] result = new int[source.length + 1];
         result[index] = element;
         int sourceIndex = 0;
@@ -154,6 +172,7 @@ public class ArrayHelpers {
         return -1;
     }
 
+
     public static int[] removeAllOccurrences(int[] source, int element) {
         /**
          * Removes all occurrences of <code>element</code> in array <code>source</code>.
@@ -181,16 +200,35 @@ public class ArrayHelpers {
         return result;
     }
 
+
     public static void reverse(int[] arrayToReverse) {
+        /***
+         * Reverses array <code>arrayToReverse</code> to the same array.
+         *
+         * @param int[] arrayToReverse as the array that needs to be reversed
+         * Reverses the contents of ArrayToRevers by creating a new array in the method and then
+         * overwriting the contents of the original array.
+         *
+         * @author Ivan Ivanov
+         **/
+        int[] result = new int[arrayToReverse.length];
+        for (int i = arrayToReverse.length - 1 , j = 0;  i >= 0 && j < result.length; i--, j++) {
+            result[j] = arrayToReverse[i];
+        }
+        for (int i = 0; i < arrayToReverse.length; i++) {
+            arrayToReverse[i] = result[i];
+        }
     }
 
     public static int[] section(int[] source, int startIndex, int endIndex) {
-        if (startIndex < 0 || endIndex > source.length || startIndex > endIndex) {
+        if (startIndex < 0 || endIndex > source.length || startIndex > endIndex ) {
             return source;
         }
-        int[] result = new int[endIndex - startIndex];
-        for (int i = startIndex; i < endIndex; i++) {
-            result[i - startIndex] = source[i];
+        int lenght2 = endIndex - startIndex + 1;
+
+        int[] result = new int[lenght2];
+        for (int i = startIndex, j = 0 ; i < endIndex && j < result.length ; i++, j++) {
+            result[j] = source[i];
         }
         return result;
     }
