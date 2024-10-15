@@ -50,8 +50,7 @@ public class ArrayHelpers {
         return newArray;
     }
 
-    // Adds all elements to the end of targeted int[] "source"
-    // Georgi Benchev
+
     /**
      * Adds all "elements" to the end of targeted int[] "source"
      *
@@ -75,8 +74,17 @@ public class ArrayHelpers {
         return outputArray;
     }
 
-    // Checks if source contains element and returns boolean
-    // Georgi Benchev
+
+    /**
+     * Checks if "source" contains "element" and returns boolean
+     *
+     * @param source int[] - The array to check
+     * @param element int - The integer that will be checked
+     * @return boolean - true if the integer "element" is contained in the int[] "source"
+     * and false if it's not.
+     *
+     * @author Georgi Benchev
+     */
     public static boolean contains(int[] source, int element) {
         for (int i = 0; i < source.length; i++) {
             if (source[i] == element) {
