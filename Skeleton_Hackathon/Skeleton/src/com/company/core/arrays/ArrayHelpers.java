@@ -4,8 +4,18 @@ package com.company.core.arrays;
 public class ArrayHelpers {
 
     public static int[] add(int[] source, int element) {
-        return new int[1];
+        int[] newArray = new int[source.length + 1];
+
+        for (int i = 0; i <= source.length - 1; i++) {
+            newArray[i] += source[i];
+        }
+
+        newArray[newArray.length - 1] += element;
+
+        return newArray;
+
     }
+
 
     public static int[] addFirst(int[] source, int element) {
         return new int[1];
