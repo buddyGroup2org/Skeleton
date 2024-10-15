@@ -2,7 +2,7 @@ package com.company.core.strings;
 
 @SuppressWarnings("StringConcatenationInLoop")
 public class StringHelpers {
-    //Daniel
+    //Daniel Kolev
     //Length Check:
     //If the length of source is less than or equal to maxLength, the method simply returns the original string, unchanged.
     //Initializing StringBuilder to keep the String part.
@@ -10,7 +10,7 @@ public class StringHelpers {
     //If source is longer than maxLength, an ellipsis (...) is added to the end of result.
     //Return the result.
     public static String abbreviate(String source, int maxLength) {
-        if (source.length() <= maxLength){
+        if (source.length() <= maxLength) {
             return source;
         }
         StringBuilder result = new StringBuilder();
@@ -22,7 +22,8 @@ public class StringHelpers {
         }
         return result.toString();
     }
-    //Daniel
+
+    //Daniel Kolev
     //Checking if the string is empty.
     //Creating a StringBuilder which copies the contents of the original source string.
     //Iterate through the symbols If it is the first character, it is converted to an uppercase letter
@@ -30,24 +31,26 @@ public class StringHelpers {
     //Return the result.
     public static String capitalize(String source) {
 
-        if (source.length() == 0){
+        if (source.length() == 0) {
             return source;
         }
         StringBuilder result = new StringBuilder(source);
         for (int i = 0; i < result.length(); i++) {
-            if (i == 0){
+            if (i == 0) {
                 result.setCharAt(i, Character.toUpperCase(result.charAt(i)));
             }
 
         }
         return result.toString();
     }
+    //Daniel Kolev
     //Concatenates the two strings string1 and string2.
     //Return the result.
     public static String concat(String string1, String string2) {
         String result = string1 + string2;
         return result;
     }
+    //Daniel Kolev
     //Iterates through each character in the source string.
     //Check if the current element is equal to the symbol.
     //If it is return true, else return false.
@@ -61,13 +64,49 @@ public class StringHelpers {
     }
 
     public static boolean endsWith(String source, char target) {
+        /**
+         * Checks if the given String <code>source</code> ends with the given char <code>target</code>.
+         *
+         * @param String source - a string from which we read its last element
+         * @param char target The target which we need to check if it is the last of char of the string
+         * @return A boolean of true or false, whether its the target or not.
+         *
+         * @author Ivan Ivanov
+         */
+        if (source.isEmpty()){
+            return false;
+        }
+        if (target == source.charAt(source.length() - 1)){
+            return true;
+        }
         return false;
     }
 
     public static int firstIndexOf(String source, char target) {
-        return 0;
+        /**
+         * Searches first appearance of <code>char</code> index in String <code>source</code>
+         * and returns its int position.
+         *
+         * @param String source a string from which we read its elements
+         * @param char element - The element which we need to search in the string
+         * @return An int of which index is the first appearance of target in the string.
+         *
+         * @author Ivan Ivanov
+         */
+        boolean isFound = false;
+        int position = 0;
+        for (int i = 0; i < source.length(); i++) {
+            if (target == source.charAt(i)) {
+                isFound = true;
+                position = i;
+            }
+        }
+        if (isFound) {
+            return position;
+        }
+        return -1;
     }
-
+    //Daniel Kolev
     //Initialization:
     //A loop that iterates through source in reverse order, starting from the last character.
     //Symbol comparison.
@@ -102,20 +141,20 @@ public class StringHelpers {
         int index = 0;
         String result = "";
         int difference = length - source.length();
-        if(source.length() > length){
+        if (source.length() > length) {
             return source;
         }
-        while(index < difference/ 2){
+        while (index < difference / 2) {
             result += paddingSymbol;
             index++;
         }
         index = 0;
         result += source;
-        while(index < difference / 2){
+        while (index < difference / 2) {
             result += paddingSymbol;
             index++;
         }
-        return  result;
+        return result;
     }
 
     public static String padEnd(String source, int length, char paddingSymbol) {
@@ -131,7 +170,7 @@ public class StringHelpers {
          */
         String result = source;
         for (int i = result.length(); i < length; i++) {
-            result+= paddingSymbol;
+            result += paddingSymbol;
         }
         return result;
     }
@@ -154,18 +193,47 @@ public class StringHelpers {
         result += source;
         return result;
     }
-
+    //Daniel Kolev
+    //Initializing a variable that will store the repeating string.
+    //Null check: If times = 0, just returns the original source string.
+    //Initializing a loop that iterating (times) times.
+    //Return the result.
     public static String repeat(String source, int times) {
-        return null;
+        String repeatingWord = "";
+        if (times == 0) {
+            repeatingWord = source;
+            return repeatingWord;
+        }
+        for (int i = 0; i < times; i++) {
+            repeatingWord += source;
+        }
+        return repeatingWord;
     }
 
     public static String reverse(String source) {
-        return null;
+        char[] reversedSource = new char[source.length()];
+        for (int i = source.length() - 1 , j = 0; i >= 0 && j < source.length(); i--, j++) {
+            reversedSource[i] = source.charAt(j);
+        }
+        String result = "";
+        for (int i = 0; i < reversedSource.length ; i++) {
+            result = result + reversedSource[i];
+        }
+        return result;
     }
 
-    /* returns a subString "section" from input String "source"
-     starting at index "start"(inclusive) and ending at index "end"(inclusive)
-     Georgi Benchev   */
+
+    /**
+     *  returns a subString "section" from input String "source"
+     *  starting at index "start"(inclusive) and ending at index "end"(inclusive)
+     *
+     * @param source The string that will be cut.
+     * @param start The start(inclusive) of the new string.
+     * @param end The end(inclusive) of the new string.
+     * @return the result in string "section".
+     *
+     * @author Georgi Benchev
+     */
     public static String section(String source, int start, int end) {
         String section = "";
         for (int i = start; i <= end; i++) {
@@ -174,8 +242,16 @@ public class StringHelpers {
         return section;
     }
 
-    // checks if the first char of given string "source" is the same as char "target"
-    // Georgi Benchev
+
+    /**
+     *  checks if string "source" starts with char "target"
+     *
+     * @param source The string that will be checked.
+     * @param target The char that will be used for the check
+     * @return A boolean - true if "source" starts with "target" and false if not
+     *
+     * @author Georgi Benchev
+     */
     public static boolean startsWith(String source, char target) {
         if (!source.isEmpty() && source.charAt(0) == target) {
             return true;
