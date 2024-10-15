@@ -23,7 +23,6 @@ public class ArrayHelpers {
         return newArray;
     }
 
-
     /**
      * adds new int "element" at the beginning of int[] "source"
      *
@@ -43,7 +42,6 @@ public class ArrayHelpers {
 
         return newArray;
     }
-
 
     /**
      * Adds all "elements" to the end of targeted int[] "source"
@@ -86,7 +84,6 @@ public class ArrayHelpers {
         return false;
     }
 
-
     /**
      * Makes a copy of int[] "sourceArray"
      * and copies its first elements up to index "count"
@@ -103,7 +100,6 @@ public class ArrayHelpers {
             destinationArray[i] = sourceArray[i];
         }
     }
-
 
     /**
      * Copies "count" elements from int[] "sourceArray" starting at index "sourceStartIndex"
@@ -123,7 +119,6 @@ public class ArrayHelpers {
             destinationArray[i] = sourceArray[i - destStartIndex + sourceStartIndex];
         }
     }
-
 
     /**
      * fills every int inside int[] "source" with int "element"
@@ -160,7 +155,6 @@ public class ArrayHelpers {
         return result;
     }
 
-
     /**
      * Inserts <code>element<code/>> at index <code>index<code/>> in <code>source<code/>>.
      *
@@ -185,7 +179,6 @@ public class ArrayHelpers {
         return result;
     }
 
-
     // Checks if the input index is valid in the array
     // If the array is empty, result should be "false"
     // Chavdar Tsvetkov
@@ -202,12 +195,10 @@ public class ArrayHelpers {
         return false;
     }
 
-
     // Returns the last index of the array
     // If the array is empty, result should be -1
     // If the target is out of bounds, result should be -1
     // Chavdar Tsvetkov
-
     public static int lastIndexOf(int[] source, int target) {
 
         if (source.length == 0) {
@@ -259,7 +250,6 @@ public class ArrayHelpers {
         return result;
     }
 
-
     /***
      * Reverses array <code>arrayToReverse</code> to the same array.
      *
@@ -280,14 +270,11 @@ public class ArrayHelpers {
         }
     }
 
-
     // Returns a clipped version of the originally given array.
     // If the endIndex is out of bounds, the array will only be clipped from the start.
     // If the startIndex is out of bounds, the array will return the same as given.
     // If there are 0 elements in the array, the same array will be returned.
     // Chavdar Tsvetkov
-
-
     public static int[] section(int[] source, int startIndex, int endIndex) {
 
         if (source.length == 0) {
