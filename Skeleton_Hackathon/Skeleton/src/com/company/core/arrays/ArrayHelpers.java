@@ -52,6 +52,15 @@ public class ArrayHelpers {
 
     // Adds all elements to the end of targeted int[] "source"
     // Georgi Benchev
+    /**
+     * Adds all "elements" to the end of targeted int[] "source"
+     *
+     * @param source int[] - The initial int[]
+     * @param elements int... - The integers that will be added
+     * @return int[] with the same elements as "source" + all integers from "elements" at the end
+     *
+     * @author Georgi Benchev
+     */
     public static int[] addAll(int[] source, int... elements) {
         int[] elementsToAdd = Arrays.stream(elements).toArray();
         int[] outputArray = new int[source.length + elementsToAdd.length];
