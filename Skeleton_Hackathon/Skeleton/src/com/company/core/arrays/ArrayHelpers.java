@@ -91,6 +91,7 @@ public class ArrayHelpers {
 
     public static int firstIndexOf(int[] source, int target) {
         return 0;
+
     }
 
     public static int[] insert(int[] source, int index, int element) {return new int[1];
@@ -119,14 +120,43 @@ public class ArrayHelpers {
     }
 
     public static int[] removeAllOccurrences(int[] source, int element) {
-        return new int[1];
+        /**
+         * Removes all occurrences of <code>element</code> in array <code>source</code>.
+         *
+         * @param int[] source an array from which we read its elements
+         * @param int element The element which we need to remove
+         * @return An array that represents the version of the array source
+         * which removes all occurrences of element n in it.
+         *
+         * @author Ivan Ivanov
+         */
+        int count = 0;
+        for (int i = 0; i < source.length; i++) {
+            if (source[i] == element) {
+                count++;
+            }
+        }
+        int[] result = new int[source.length - count];
+        int index = 0;
+        for (int i = 0; i < source.length; i++) {
+            if (source[i] != element) {
+                result[index++] = source[i];
+            }
+        }
+        return result;
     }
 
     public static void reverse(int[] arrayToReverse) {
     }
 
     public static int[] section(int[] source, int startIndex, int endIndex) {
-        return new int[1];
+        if (startIndex < 0 || endIndex > source.length || startIndex > endIndex) {
+            return source;
+        }
+        int[] result = new int[endIndex - startIndex];
+        for (int i = startIndex; i < endIndex; i++) {
+            result[i - startIndex] = source[i];
+        }
+        return result;
     }
-
 }
