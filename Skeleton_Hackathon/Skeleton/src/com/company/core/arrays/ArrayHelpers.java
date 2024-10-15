@@ -200,7 +200,6 @@ public class ArrayHelpers {
         return result;
     }
 
-
     public static void reverse(int[] arrayToReverse) {
         /***
          * Reverses array <code>arrayToReverse</code> to the same array.
