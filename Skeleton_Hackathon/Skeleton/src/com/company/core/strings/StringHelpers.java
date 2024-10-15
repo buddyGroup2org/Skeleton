@@ -10,7 +10,6 @@ public class StringHelpers {
     //If source is longer than maxLength, an ellipsis (...) is added to the end of result.
     //Return the result.
     public static String abbreviate(String source, int maxLength) {
-
         if (source.length() <= maxLength){
             return source;
         }
@@ -18,7 +17,7 @@ public class StringHelpers {
         for (int i = 0; i < maxLength; i++) {
             result.append(source.charAt(i));
         }
-        if (source.length() > maxLength){
+        if (source.length() > maxLength) {
             result.append("...");
         }
         return result.toString();
@@ -46,7 +45,6 @@ public class StringHelpers {
     //Concatenates the two strings string1 and string2.
     //Return the result.
     public static String concat(String string1, String string2) {
-
         String result = string1 + string2;
         return result;
     }
@@ -112,11 +110,23 @@ public class StringHelpers {
         return null;
     }
 
+    /* returns a subString "section" from input String "source"
+     starting at index "start"(inclusive) and ending at index "end"(inclusive)
+     Georgi Benchev   */
     public static String section(String source, int start, int end) {
-        return null;
+        String section = "";
+        for (int i = start; i <= end; i++) {
+            section += (source.charAt(i));
+        }
+        return section;
     }
 
+    // checks if the first char of given string "source" is the same as char "target"
+    // Georgi Benchev
     public static boolean startsWith(String source, char target) {
+        if (!source.isEmpty() && source.charAt(0) == target) {
+            return true;
+        }
         return false;
     }
 
