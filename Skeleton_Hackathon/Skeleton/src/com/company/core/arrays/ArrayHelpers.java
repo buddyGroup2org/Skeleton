@@ -90,19 +90,67 @@ public class ArrayHelpers {
     }
 
     public static int firstIndexOf(int[] source, int target) {
-        return 0;
+        int result = -1;
+        for (int i = 0; i < source.length; i++) {
+            if(source[i] == target){
+                result = i;
+                break;
+            }
+        }
+        return result;
     }
 
     public static int[] insert(int[] source, int index, int element) {
-        return new int[1];
+        int[] result = new int[source.length + 1];
+        result[index] = element;
+        int sourceIndex = 0;
+        for (int i = 0; i < result.length; i++) {
+            if(i == index){
+                continue;
+            }
+            result[i] = source[sourceIndex];
+            sourceIndex++;
+        }
+        return result;
     }
 
+
+    // Checks if the input index is valid in the array
+    // If the array is empty, result should be "false"
+    // Chavdar Tsvetkov
     public static boolean isValidIndex(int[] source, int index) {
+        if (source.length == 0){
+            return false;
+        }
+        for (int i = 0; i <= source.length - 1 ; i++) {
+
+            if (index == source[i]){
+                return true;
+            }
+        }
         return false;
     }
 
+
+
+    // Returns the last index of the array
+    // If the array is empty, result should be -1
+    // If the target is out of bounds, result should be -1
+    // Chavdar Tsvetkov
+
     public static int lastIndexOf(int[] source, int target) {
-        return 0;
+
+            if (source.length == 0){
+                return -1;
+            }
+
+        for (int i = 0; i <= source.length - 1 ; i++) {
+
+            if (source.length - 1 == target){
+                return source[source.length - 1];
+            }
+        }
+        return -1;
     }
 
     /**

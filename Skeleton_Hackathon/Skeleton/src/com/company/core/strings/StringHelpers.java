@@ -5,14 +5,14 @@ public class StringHelpers {
 
     public static String abbreviate(String source, int maxLength) {
         //Daniel
-        if (source.length() <= maxLength){
+        if (source.length() <= maxLength) {
             return source;
         }
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < maxLength; i++) {
             result.append(source.charAt(i));
         }
-        if (source.length() > maxLength){
+        if (source.length() > maxLength) {
             result.append("...");
         }
         return result.toString();
@@ -25,12 +25,12 @@ public class StringHelpers {
         //Iterate through the symbols If it is the first character, it is converted to an uppercase letter
         // using Character.toUpperCase() and replaced in StringBuilder using setCharAt().
         //Return the result.
-        if (source.length() == 0){
+        if (source.length() == 0) {
             return source;
         }
         StringBuilder result = new StringBuilder(source);
         for (int i = 0; i < result.length(); i++) {
-            if (i == 0){
+            if (i == 0) {
                 result.setCharAt(i, Character.toUpperCase(result.charAt(i)));
             }
 
@@ -62,26 +62,26 @@ public class StringHelpers {
         int index = 0;
         String result = "";
         int difference = length - source.length();
-        if(source.length() > length){
+        if (source.length() > length) {
             return source;
         }
-        while(index < difference/ 2){
+        while (index < difference / 2) {
             result += paddingSymbol;
             index++;
         }
         index = 0;
         result += source;
-        while(index < difference / 2){
+        while (index < difference / 2) {
             result += paddingSymbol;
             index++;
         }
-        return  result;
+        return result;
     }
 
     public static String padEnd(String source, int length, char paddingSymbol) {
         String result = source;
         for (int i = result.length(); i < length; i++) {
-            result+= paddingSymbol;
+            result += paddingSymbol;
         }
         return result;
     }
@@ -103,11 +103,23 @@ public class StringHelpers {
         return null;
     }
 
+    /* returns a subString "section" from input String "source"
+     starting at index "start"(inclusive) and ending at index "end"(inclusive)
+     Georgi Benchev   */
     public static String section(String source, int start, int end) {
-        return null;
+        String section = "";
+        for (int i = start; i <= end; i++) {
+            section += (source.charAt(i));
+        }
+        return section;
     }
 
+    // checks if the first char of given string "source" is the same as char "target"
+    // Georgi Benchev
     public static boolean startsWith(String source, char target) {
+        if (!source.isEmpty() && source.charAt(0) == target) {
+            return true;
+        }
         return false;
     }
 
