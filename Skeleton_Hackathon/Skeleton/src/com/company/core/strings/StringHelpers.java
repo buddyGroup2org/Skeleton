@@ -48,8 +48,15 @@ public class StringHelpers {
         String result = string1 + string2;
         return result;
     }
-
+    //Iterates through each character in the source string.
+    //Check if the current element is equal to the symbol.
+    //If it is return true, else return false.
     public static boolean contains(String source, char symbol) {
+        for (int i = 0; i < source.length(); i++) {
+            if (source.charAt(i) == symbol){
+                return true;
+            }
+        }
         return false;
     }
 
@@ -62,7 +69,18 @@ public class StringHelpers {
     }
 
     public static int lastIndexOf(String source, char symbol) {
-        return 0;
+        boolean isFound = false;
+        int position = 0;
+        for (int i = source.length() - 1; i >= 0; i--) {
+            if (source.charAt(i) == symbol){
+                isFound = true;
+                position = i;
+            }
+        }
+        if (!isFound){
+            position = -1;
+        }
+        return position;
     }
 
     public static String pad(String source, int length, char paddingSymbol) {
