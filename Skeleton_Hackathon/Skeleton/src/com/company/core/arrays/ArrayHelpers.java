@@ -4,9 +4,17 @@ import java.util.Arrays;
 
 @SuppressWarnings({"ManualArrayCopy", "ExplicitArrayFilling"})
 public class ArrayHelpers {
-    // adds new int to int[] at the end of the original int[]
-    // Chavdar Tsvetkov
 
+
+    /**
+     * adds new int "element" at the end of int[] "source"
+     *
+     * @param source int[] - The initial int[]
+     * @param element int - The int that will be added
+     * @return int[] with the same elements as "source" + "element" at last index
+     *
+     * @author Chavdar Tsvetkov && Georgi Benchev
+     */
     public static int[] add(int[] source, int element) {
         int[] newArray = new int[source.length + 1];
 
