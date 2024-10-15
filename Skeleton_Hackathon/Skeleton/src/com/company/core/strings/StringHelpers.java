@@ -201,9 +201,18 @@ public class StringHelpers {
         return null;
     }
 
-    /* returns a subString "section" from input String "source"
-     starting at index "start"(inclusive) and ending at index "end"(inclusive)
-     Georgi Benchev   */
+
+    /**
+     *  returns a subString "section" from input String "source"
+     *  starting at index "start"(inclusive) and ending at index "end"(inclusive)
+     *
+     * @param source The string that will be cut.
+     * @param start The start(inclusive) of the new string.
+     * @param end The end(inclusive) of the new string.
+     * @return the result in string "section".
+     *
+     * @author Georgi Benchev
+     */
     public static String section(String source, int start, int end) {
         String section = "";
         for (int i = start; i <= end; i++) {
