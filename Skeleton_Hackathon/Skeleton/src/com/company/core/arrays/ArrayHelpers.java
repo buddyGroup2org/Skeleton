@@ -100,7 +100,6 @@ public class ArrayHelpers {
         return result;
     }
 
-    public static int[] insert(int[] source, int index, int element) {return new int[1];
     public static int[] insert(int[] source, int index, int element) {
         int[] result = new int[source.length + 1];
         result[index] = element;
