@@ -4,7 +4,18 @@ package com.company.core.strings;
 public class StringHelpers {
 
     public static String abbreviate(String source, int maxLength) {
-        return null;
+        //Daniel
+        if (source.length() <= maxLength){
+            return source;
+        }
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < maxLength; i++) {
+            result.append(source.charAt(i));
+        }
+        if (source.length() > maxLength){
+            result.append("...");
+        }
+        return result.toString();
     }
 
     public static String capitalize(String source) {

@@ -33,6 +33,8 @@ public class ArrayHelpers {
         return newArray;
     }
 
+    // Adds all elements to the end of targeted int[] "source"
+    // Georgi Benchev
     public static int[] addAll(int[] source, int... elements) {
         int[] elementsToAdd = Arrays.stream(elements).toArray();
         int[] outputArray = new int[source.length + elementsToAdd.length];
@@ -41,18 +43,29 @@ public class ArrayHelpers {
             outputArray[i] += source[i];
         }
         for (int newElement = 0; newElement < elementsToAdd.length; newElement++) {
-            outputArray[source.length+newElement]=elementsToAdd[newElement];
+            outputArray[source.length + newElement] = elementsToAdd[newElement];
         }
 
         return outputArray;
     }
 
+    // Checks if source contains element and returns boolean
+    // Georgi Benchev
     public static boolean contains(int[] source, int element) {
+        for (int i = 0; i < source.length; i++) {
+            if (source[i] == element) {
+                return true;
+            }
+        }
         return false;
     }
 
+    // makes copy of int[] "sourceArray" and copies its first "count" elements to int[] "destinationArray"
+    // Georgi Benchev
     public static void copy(int[] sourceArray, int[] destinationArray, int count) {
-
+        for (int i = 0; i < Math.min(count, sourceArray.length); i++) {
+            destinationArray[i] += sourceArray[i];
+        }
     }
 
     public static void copyFrom(int[] sourceArray, int sourceStartIndex,
