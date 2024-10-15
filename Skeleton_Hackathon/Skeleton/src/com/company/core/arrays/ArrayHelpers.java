@@ -304,8 +304,8 @@ public class ArrayHelpers {
         }
 
 
-            int count = 0;
-            int[] newArr = new int[(endIndex - startIndex) + 1];
+        int count = 0;
+        int[] newArr = new int[(endIndex - startIndex) + 1];
 
         for (int i = startIndex; i <= endIndex ; i++) {
 
