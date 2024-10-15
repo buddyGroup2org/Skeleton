@@ -6,6 +6,7 @@ import java.util.Arrays;
 public class ArrayHelpers {
     // adds new int to int[] at the end of the original int[]
     // Chavdar Tsvetkov
+
     public static int[] add(int[] source, int element) {
         int[] newArray = new int[source.length + 1];
 
