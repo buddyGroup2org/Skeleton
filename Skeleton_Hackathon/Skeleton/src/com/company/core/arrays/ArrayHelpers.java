@@ -90,15 +90,46 @@ public class ArrayHelpers {
     }
 
     public static int firstIndexOf(int[] source, int target) {
-        return 0;
-
+        int result = -1;
+        for (int i = 0; i < source.length; i++) {
+            if(source[i] == target){
+                result = i;
+                break;
+            }
+        }
+        return result;
     }
 
+    public static int[] insert(int[] source, int index, int element) {return new int[1];
     public static int[] insert(int[] source, int index, int element) {
-        return new int[1];
+        int[] result = new int[source.length + 1];
+        result[index] = element;
+        int sourceIndex = 0;
+        for (int i = 0; i < result.length; i++) {
+            if(i == index){
+                continue;
+            }
+            result[i] = source[sourceIndex];
+            sourceIndex++;
+        }
+        return result;
     }
 
+
+    // Checks if the input index is valid in the array
+    // Chavdar Tsvetkov
     public static boolean isValidIndex(int[] source, int index) {
+
+        for (int i = 0; i <= source.length - 1 ; i++) {
+
+            if (source.length == 0){
+                return false;
+            }
+
+            if (index == source[i]){
+                return true;
+            }
+        }
         return false;
     }
 
