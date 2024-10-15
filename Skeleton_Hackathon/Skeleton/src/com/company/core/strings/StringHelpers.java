@@ -59,6 +59,16 @@ public class StringHelpers {
     }
 
     public static String pad(String source, int length, char paddingSymbol) {
+        /**
+         * Pads string on the left and right sides if it's shorter than <code>length</code>.
+         *
+         * @param source String - The string to pad
+         * @param length int - The length of the string to achieve
+         * @param target char - The character used as padding
+         * @return The padded string
+         *
+         * @author Lachezar Lazarov
+         */
         int index = 0;
         String result = "";
         int difference = length - source.length();
@@ -79,6 +89,16 @@ public class StringHelpers {
     }
 
     public static String padEnd(String source, int length, char paddingSymbol) {
+        /**
+         * Pads <code>source</code> on the right side with <code>paddingSymbol</code> enough times to reach length <code>length</code>.
+         *
+         * @param source String - The string to pad
+         * @param length int - The length of the string to achieve
+         * @param paddingSymbol char - The character used as padding
+         * @return The padded string
+         *
+         * @author Lachezar Lazarov
+         */
         String result = source;
         for (int i = result.length(); i < length; i++) {
             result+= paddingSymbol;
@@ -87,6 +107,16 @@ public class StringHelpers {
     }
 
     public static String padStart(String source, int length, char paddingSymbol) {
+        /**
+         * Pads <code>source</code> on the left side with <code>paddingSymbol</code> enough times to reach length <code>length</code>.
+         *
+         * @param source String - The string to pad
+         * @param length int - The length of the string to achieve
+         * @param paddingSymbol char - The character used as padding
+         * @return The padded string
+         *
+         * @author Lachezar Lazarov
+         */
         String result = "";
         for (int i = 0; i < length - source.length(); i++) {
             result += paddingSymbol;
