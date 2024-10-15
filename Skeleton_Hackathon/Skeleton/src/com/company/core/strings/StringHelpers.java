@@ -211,7 +211,15 @@ public class StringHelpers {
     }
 
     public static String reverse(String source) {
-        return null;
+        char[] reversedSource = new char[source.length()];
+        for (int i = source.length() - 1 , j = 0; i >= 0 && j < source.length(); i--, j++) {
+            reversedSource[i] = source.charAt(j);
+        }
+        String result = "";
+        for (int i = 0; i < reversedSource.length ; i++) {
+            result = result + reversedSource[i];
+        }
+        return result;
     }
 
 
