@@ -105,17 +105,17 @@ public class ArrayHelpers {
         return 0;
     }
 
+    /**
+     * Removes all occurrences of <code>element</code> in array <code>source</code>.
+     *
+     * @param int[] source an array from which we read its elements
+     * @param int element The element which we need to remove
+     * @return An array that represents the version of the array source
+     * which removes all occurrences of element n in it.
+     *
+     * @author Ivan Ivanov
+     */
     public static int[] removeAllOccurrences(int[] source, int element) {
-        /**
-         * Removes all occurrences of <code>element</code> in array <code>source</code>.
-         *
-         * @param int[] source an array from which we read its elements
-         * @param int element The element which we need to remove
-         * @return An array that represents the version of the array source
-         * which removes all occurrences of element n in it.
-         *
-         * @author Ivan Ivanov
-         */
         int count = 0;
         for (int i = 0; i < source.length; i++) {
             if (source[i] == element) {
@@ -133,15 +133,34 @@ public class ArrayHelpers {
     }
 
     public static void reverse(int[] arrayToReverse) {
+        /**
+         * Removes all occurrences of <code>element</code> in array <code>source</code>.
+         *
+         * @param int[] source an array from which we read its elements
+         * @param int element The element which we need to remove
+         * @return An array that represents the version of the array source
+         * which removes all occurrences of element n in it.
+         *
+         * @author Ivan Ivanov
+         */
+        int[] result = new int[arrayToReverse.length];
+        for (int i = arrayToReverse.length - 1 , j = 0;  i >= 0 && j < result.length; i--, j++) {
+            result[j] = arrayToReverse[i];
+        }
+        for (int i = 0; i < arrayToReverse.length; i++) {
+            arrayToReverse[i] = result[i];
+        }
     }
 
     public static int[] section(int[] source, int startIndex, int endIndex) {
-        if (startIndex < 0 || endIndex > source.length || startIndex > endIndex) {
+        if (startIndex < 0 || endIndex > source.length || startIndex > endIndex ) {
             return source;
         }
-        int[] result = new int[endIndex - startIndex];
-        for (int i = startIndex; i < endIndex; i++) {
-            result[i - startIndex] = source[i];
+        int lenght2 = endIndex - startIndex + 1;
+
+        int[] result = new int[lenght2];
+        for (int i = startIndex, j = 0 ; i < endIndex && j < result.length ; i++, j++) {
+            result[j] = source[i];
         }
         return result;
     }
