@@ -19,7 +19,23 @@ public class StringHelpers {
     }
 
     public static String capitalize(String source) {
-        return null;
+        //Daniel
+        //Checking if the string is empty.
+        //Creating a StringBuilder which copies the contents of the original source string.
+        //Iterate through the symbols If it is the first character, it is converted to an uppercase letter
+        // using Character.toUpperCase() and replaced in StringBuilder using setCharAt().
+        //Return the result.
+        if (source.length() == 0){
+            return source;
+        }
+        StringBuilder result = new StringBuilder(source);
+        for (int i = 0; i < result.length(); i++) {
+            if (i == 0){
+                result.setCharAt(i, Character.toUpperCase(result.charAt(i)));
+            }
+
+        }
+        return result.toString();
     }
 
     public static String concat(String string1, String string2) {
