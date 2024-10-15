@@ -90,11 +90,29 @@ public class ArrayHelpers {
     }
 
     public static int firstIndexOf(int[] source, int target) {
-        return 0;
-
+        int result = -1;
+        for (int i = 0; i < source.length; i++) {
+            if(source[i] == target){
+                result = i;
+                break;
+            }
+        }
+        return result;
     }
 
     public static int[] insert(int[] source, int index, int element) {return new int[1];
+    public static int[] insert(int[] source, int index, int element) {
+        int[] result = new int[source.length + 1];
+        result[index] = element;
+        int sourceIndex = 0;
+        for (int i = 0; i < result.length; i++) {
+            if(i == index){
+                continue;
+            }
+            result[i] = source[sourceIndex];
+            sourceIndex++;
+        }
+        return result;
     }
 
 
