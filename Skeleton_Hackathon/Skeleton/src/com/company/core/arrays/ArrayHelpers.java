@@ -159,17 +159,26 @@ public class ArrayHelpers {
 
     public static int lastIndexOf(int[] source, int target) {
 
-            if (source.length == 0){
-                return -1;
-            }
-
-        for (int i = 0; i <= source.length - 1 ; i++) {
-
-            if (source.length - 1 == target){
-                return source[source.length - 1];
-            }
+        if (source.length == 0) {
+            return -1;
         }
-        return -1;
+
+        int lastIndex = 0;
+        boolean flag = false;
+        for (int i = 0; i <= source.length - 1; i++) {
+            if (source[i] == target) {
+                lastIndex = i;
+                flag = true;
+            }
+
+        }
+
+        if (flag){
+            return lastIndex;
+        }else {
+            return -1;
+        }
+
     }
 
 
