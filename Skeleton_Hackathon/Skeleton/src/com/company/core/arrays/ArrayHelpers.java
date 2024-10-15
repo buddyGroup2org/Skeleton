@@ -93,11 +93,24 @@ public class ArrayHelpers {
         return 0;
     }
 
-    public static int[] insert(int[] source, int index, int element) {
-        return new int[1];
+    public static int[] insert(int[] source, int index, int element) {return new int[1];
     }
 
+
+    // Checks if the input index is valid in the array
+    // Chavdar Tsvetkov
     public static boolean isValidIndex(int[] source, int index) {
+
+        for (int i = 0; i <= source.length - 1 ; i++) {
+
+            if (source.length == 0){
+                return false;
+            }
+
+            if (index == source[i]){
+                return true;
+            }
+        }
         return false;
     }
 
