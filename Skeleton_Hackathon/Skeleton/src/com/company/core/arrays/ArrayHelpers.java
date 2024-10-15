@@ -274,40 +274,7 @@ public class ArrayHelpers {
 
     public static int[] section(int[] source, int startIndex, int endIndex) {
 
-        if (source.length == 0){
-            return source;
-        }
-
-
-        if (endIndex >= source.length || endIndex < 0){
-
-            int count = 0;
-
-            int[] shorterArr = new int[source.length  - startIndex];
-
-            for (int i = 0; i <= shorterArr.length - 1 ; i++) {
-                shorterArr[i] += source[startIndex + count];
-                count ++;
-            }
-            return shorterArr;
-        }
-
-        if (startIndex < 0 || startIndex >= source.length){
-            return source;
-        }
-
-
-            int count = 0;
-            int[] newArr = new int[(endIndex - startIndex) + 1];
-
-        for (int i = startIndex; i <= endIndex ; i++) {
-
-
-            newArr[count] += source[i];
-
-            count++;
-
-        }
+        int[] newArr = new int[]{123};
         return newArr;
 
     }
