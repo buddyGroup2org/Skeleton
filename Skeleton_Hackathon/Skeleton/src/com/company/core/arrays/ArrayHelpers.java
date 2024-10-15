@@ -16,9 +16,18 @@ public class ArrayHelpers {
 
     }
 
-
+    // adds new int to int[] at index 0 while preserving the rest of the original int[]
+    // Georgi-Benchev
     public static int[] addFirst(int[] source, int element) {
-        return new int[1];
+        int[] newArray = new int[source.length + 1];
+
+        newArray[0] += element;
+
+        for (int i = 0; i <= source.length - 1; i++) {
+            newArray[i+1] += source[i];
+        }
+
+        return newArray;
     }
 
     public static int[] addAll(int[] source, int... elements) {
