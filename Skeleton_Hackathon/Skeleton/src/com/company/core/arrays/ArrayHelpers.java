@@ -80,8 +80,12 @@ public class ArrayHelpers {
 
     }
 
+    // fills every int in int[] "source" with int "element"
+    // Georgi Benchev
     public static void fill(int[] source, int element) {
-
+        for (int i = 0; i <source.length ; i++) {
+            source[i]=element;
+        }
     }
 
     public static int firstIndexOf(int[] source, int target) {
