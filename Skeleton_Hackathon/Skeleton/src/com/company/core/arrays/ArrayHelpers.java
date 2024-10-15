@@ -220,16 +220,54 @@ public class ArrayHelpers {
         }
     }
 
+
+
+
+
+    // Returns a clipped version of the originally given array.
+    // If the endIndex is out of bounds, the array will only be clipped from the start.
+    // If the startIndex is out of bounds, the array will return the same as given.
+    // If there are 0 elements in the array, the same array will be returned.
+    // Chavdar Tsvetkov
+
+
     public static int[] section(int[] source, int startIndex, int endIndex) {
-        if (startIndex < 0 || endIndex > source.length || startIndex > endIndex ) {
+
+        if (source.length == 0){
             return source;
         }
-        int lenght2 = endIndex - startIndex + 1;
 
-        int[] result = new int[lenght2];
-        for (int i = startIndex, j = 0 ; i < endIndex && j < result.length ; i++, j++) {
-            result[j] = source[i];
+
+        if (endIndex >= source.length || endIndex < 0){
+
+            int count = 0;
+
+            int[] shorterArr = new int[source.length  - startIndex];
+
+            for (int i = 0; i <= shorterArr.length - 1 ; i++) {
+                shorterArr[i] += source[startIndex + count];
+                count ++;
+            }
+            return shorterArr;
         }
-        return result;
+
+        if (startIndex < 0 || startIndex >= source.length){
+            return source;
+        }
+
+
+            int count = 0;
+            int[] newArr = new int[(endIndex - startIndex) + 1];
+
+        for (int i = startIndex; i <= endIndex ; i++) {
+
+
+            newArr[count] += source[i];
+
+            count++;
+
+        }
+        return newArr;
+
     }
 }
