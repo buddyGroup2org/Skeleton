@@ -1,8 +1,11 @@
 package com.company.core.arrays;
 
+import java.util.Arrays;
+
 @SuppressWarnings({"ManualArrayCopy", "ExplicitArrayFilling"})
 public class ArrayHelpers {
-
+    // adds new int to int[] at the end of the original int[]
+    // Chavdar Tsvetkov
     public static int[] add(int[] source, int element) {
         int[] newArray = new int[source.length + 1];
 
@@ -16,21 +19,53 @@ public class ArrayHelpers {
 
     }
 
-
+    // adds new int to int[] at index 0 while preserving the rest of the original int[]
+    // Georgi Benchev
     public static int[] addFirst(int[] source, int element) {
-        return new int[1];
+        int[] newArray = new int[source.length + 1];
+
+        newArray[0] += element;
+
+        for (int i = 0; i <= source.length - 1; i++) {
+            newArray[i + 1] += source[i];
+        }
+
+        return newArray;
     }
 
+    // Adds all elements to the end of targeted int[] "source"
+    // Georgi Benchev
     public static int[] addAll(int[] source, int... elements) {
-        return new int[1];
+        int[] elementsToAdd = Arrays.stream(elements).toArray();
+        int[] outputArray = new int[source.length + elementsToAdd.length];
+
+        for (int i = 0; i < source.length; i++) {
+            outputArray[i] += source[i];
+        }
+        for (int newElement = 0; newElement < elementsToAdd.length; newElement++) {
+            outputArray[source.length + newElement] = elementsToAdd[newElement];
+        }
+
+        return outputArray;
     }
 
+    // Checks if source contains element and returns boolean
+    // Georgi Benchev
     public static boolean contains(int[] source, int element) {
+        for (int i = 0; i < source.length; i++) {
+            if (source[i] == element) {
+                return true;
+            }
+        }
         return false;
     }
 
+    // makes copy of int[] "sourceArray" and copies its first "count" elements to int[] "destinationArray"
+    // Georgi Benchev
     public static void copy(int[] sourceArray, int[] destinationArray, int count) {
-
+        for (int i = 0; i < Math.min(count, sourceArray.length); i++) {
+            destinationArray[i] += sourceArray[i];
+        }
     }
 
     public static void copyFrom(int[] sourceArray, int sourceStartIndex,
