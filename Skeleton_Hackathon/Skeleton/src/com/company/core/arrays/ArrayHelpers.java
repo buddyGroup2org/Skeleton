@@ -9,10 +9,9 @@ public class ArrayHelpers {
     /**
      * adds new int "element" at the end of int[] "source"
      *
-     * @param source int[] - The initial int[]
+     * @param source  int[] - The initial int[]
      * @param element int - The int that will be added
      * @return int[] with the same elements as "source" + "element" at last index
-     *
      * @author Chavdar Tsvetkov && Georgi Benchev
      */
     public static int[] add(int[] source, int element) {
@@ -28,10 +27,9 @@ public class ArrayHelpers {
     /**
      * adds new int "element" at the beginning of int[] "source"
      *
-     * @param source int[] - The initial int[]
+     * @param source  int[] - The initial int[]
      * @param element int - The int that will be added
      * @return int[] with the same elements as "source" + "element" at index 0
-     *
      * @author Georgi Benchev
      */
     public static int[] addFirst(int[] source, int element) {
@@ -50,10 +48,9 @@ public class ArrayHelpers {
     /**
      * Adds all "elements" to the end of targeted int[] "source"
      *
-     * @param source int[] - The initial int[]
+     * @param source   int[] - The initial int[]
      * @param elements int... - The integers that will be added
      * @return int[] with the same elements as "source" + all integers from "elements" at the end
-     *
      * @author Georgi Benchev
      */
     public static int[] addAll(int[] source, int... elements) {
@@ -74,11 +71,10 @@ public class ArrayHelpers {
     /**
      * Checks if "source" contains "element" and returns boolean
      *
-     * @param source int[] - The array to check
+     * @param source  int[] - The array to check
      * @param element int - The integer that will be checked
      * @return boolean - true if the integer "element" is contained in the int[] "source"
      * and false if it's not.
-     *
      * @author Georgi Benchev
      */
     public static boolean contains(int[] source, int element) {
@@ -96,11 +92,10 @@ public class ArrayHelpers {
      * and copies its first elements up to index "count"
      * and puts them in to int[] "destinationArray"
      *
-     * @param sourceArray int[] - The array from witch we take the numbers.
+     * @param sourceArray      int[] - The array from witch we take the numbers.
      * @param destinationArray int[] - The integer that is updated.
-     * @param count int - The size of the new int[] "destinationArray".
+     * @param count            int - The size of the new int[] "destinationArray".
      * @return void -> "destinationArray" is updated because int[] is reference type.
-     *
      * @author Georgi Benchev
      */
     public static void copy(int[] sourceArray, int[] destinationArray, int count) {
@@ -114,13 +109,12 @@ public class ArrayHelpers {
      * Copies "count" elements from int[] "sourceArray" starting at index "sourceStartIndex"
      * in to int[] "destinationArray" at position starting at "destStartIndex"
      *
-     * @param sourceArray int[] - The array from witch we take the numbers.
+     * @param sourceArray      int[] - The array from witch we take the numbers.
      * @param sourceStartIndex int - The start index for "sourceArray".
      * @param destinationArray int[] - The int[] that is updated.
-     * @param destStartIndex int - The start index for the update of "destinationArray".
-     * @param count int - The amount of numbers that we copy from "sourceArray".
+     * @param destStartIndex   int - The start index for the update of "destinationArray".
+     * @param count            int - The amount of numbers that we copy from "sourceArray".
      * @return void -> destinationArray is updated because int[] is reference type.
-     *
      * @author Georgi Benchev
      */
     public static void copyFrom(int[] sourceArray, int sourceStartIndex,
@@ -130,11 +124,19 @@ public class ArrayHelpers {
         }
     }
 
-    // fills every int in int[] "source" with int "element"
-    // Georgi Benchev
+
+    /**
+     * fills every int inside int[] "source" with int "element"
+     *
+     * @param source int[] - The int[] that is updated.
+     * @param element int - The int that will be filled in to "source".
+     * @return void -> "source" is updated because int[] is reference type.
+     *
+     * @author Georgi Benchev
+     */
     public static void fill(int[] source, int element) {
-        for (int i = 0; i <source.length ; i++) {
-            source[i]=element;
+        for (int i = 0; i < source.length; i++) {
+            source[i] = element;
         }
     }
 
@@ -148,10 +150,9 @@ public class ArrayHelpers {
      * @author Lachezar Lazarov
      */
     public static int firstIndexOf(int[] source, int target) {
-
         int result = -1;
         for (int i = 0; i < source.length; i++) {
-            if(source[i] == target){
+            if (source[i] == target) {
                 result = i;
                 break;
             }
@@ -170,12 +171,11 @@ public class ArrayHelpers {
      * @author Lachezar Lazarov
      */
     public static int[] insert(int[] source, int index, int element) {
-
         int[] result = new int[source.length + 1];
         result[index] = element;
         int sourceIndex = 0;
         for (int i = 0; i < result.length; i++) {
-            if(i == index){
+            if (i == index) {
                 continue;
             }
             result[i] = source[sourceIndex];
@@ -188,12 +188,12 @@ public class ArrayHelpers {
     // If the array is empty, result should be "false"
     // Chavdar Tsvetkov
     public static boolean isValidIndex(int[] source, int index) {
-        if (source.length == 0){
+        if (source.length == 0) {
             return false;
         }
-        for (int i = 0; i <= source.length - 1 ; i++) {
+        for (int i = 0; i <= source.length - 1; i++) {
 
-            if (index == source[i]){
+            if (index == source[i]) {
                 return true;
             }
         }
@@ -204,7 +204,6 @@ public class ArrayHelpers {
     // If the array is empty, result should be -1
     // If the target is out of bounds, result should be -1
     // Chavdar Tsvetkov
-
     public static int lastIndexOf(int[] source, int target) {
 
         if (source.length == 0) {
@@ -221,9 +220,9 @@ public class ArrayHelpers {
 
         }
 
-        if (flag){
+        if (flag) {
             return lastIndex;
-        }else {
+        } else {
             return -1;
         }
 
@@ -268,7 +267,7 @@ public class ArrayHelpers {
      **/
     public static void reverse(int[] arrayToReverse) {
         int[] result = new int[arrayToReverse.length];
-        for (int i = arrayToReverse.length - 1 , j = 0;  i >= 0 && j < result.length; i--, j++) {
+        for (int i = arrayToReverse.length - 1, j = 0; i >= 0 && j < result.length; i--, j++) {
             result[j] = arrayToReverse[i];
         }
         for (int i = 0; i < arrayToReverse.length; i++) {
@@ -276,39 +275,36 @@ public class ArrayHelpers {
         }
     }
 
-
-
     // Returns a clipped version of the originally given array.
     // If the endIndex is out of bounds, the array will only be clipped from the start.
     // If the startIndex is out of bounds, the array will return the same as given.
     // If there are 0 elements in the array, the same array will be returned.
     // Chavdar Tsvetkov
     public static int[] section(int[] source, int startIndex, int endIndex) {
-        if (source.length == 0){
+        if (source.length == 0) {
             return source;
         }
-
-        if (endIndex >= source.length || endIndex < 0){
+        if (endIndex >= source.length || endIndex < 0) {
 
             int count = 0;
 
-            int[] shorterArr = new int[source.length  - startIndex];
+            int[] shorterArr = new int[source.length - startIndex];
 
-            for (int i = 0; i <= shorterArr.length - 1 ; i++) {
+            for (int i = 0; i <= shorterArr.length - 1; i++) {
                 shorterArr[i] += source[startIndex + count];
-                count ++;
+                count++;
             }
             return shorterArr;
         }
 
-        if (startIndex < 0 || startIndex >= source.length){
+        if (startIndex < 0 || startIndex >= source.length) {
             return source;
         }
 
         int count = 0;
         int[] newArr = new int[(endIndex - startIndex) + 1];
 
-        for (int i = startIndex; i <= endIndex ; i++) {
+        for (int i = startIndex; i <= endIndex; i++) {
 
             newArr[count] += source[i];
 
