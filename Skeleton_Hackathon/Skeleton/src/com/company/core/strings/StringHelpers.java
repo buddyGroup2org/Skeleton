@@ -59,17 +59,40 @@ public class StringHelpers {
     }
 
     public static String pad(String source, int length, char paddingSymbol) {
-        return null;
-
+        int index = 0;
+        String result = "";
+        int difference = length - source.length();
+        if(source.length() > length){
+            return source;
+        }
+        while(index < difference/ 2){
+            result += paddingSymbol;
+            index++;
+        }
+        index = 0;
+        result += source;
+        while(index < difference / 2){
+            result += paddingSymbol;
+            index++;
+        }
+        return  result;
     }
 
     public static String padEnd(String source, int length, char paddingSymbol) {
-        return null;
+        String result = source;
+        for (int i = result.length(); i < length; i++) {
+            result+= paddingSymbol;
+        }
+        return result;
     }
 
     public static String padStart(String source, int length, char paddingSymbol) {
-        return null;
-
+        String result = "";
+        for (int i = 0; i < length - source.length(); i++) {
+            result += paddingSymbol;
+        }
+        result += source;
+        return result;
     }
 
     public static String repeat(String source, int times) {
