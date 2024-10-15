@@ -90,6 +90,15 @@ public class ArrayHelpers {
     }
 
     public static int firstIndexOf(int[] source, int target) {
+        /**
+         * Finds the first index of <code>target<code/> within <code>source<code/>.
+         *
+         * @param source int[] - The array to check in
+         * @param target int - The element to check for
+         * @return int - The first index of target within source, otherwise, -1
+         *
+         * @author Lachezar Lazarov
+         */
         int result = -1;
         for (int i = 0; i < source.length; i++) {
             if(source[i] == target){
@@ -101,6 +110,16 @@ public class ArrayHelpers {
     }
 
     public static int[] insert(int[] source, int index, int element) {
+        /**
+         * Inserts <code>element<code/>> at index <code>index<code/>> in <code>source<code/>>.
+         *
+         * @param source int[] - The array to insert in
+         * @param index int - The index to insert at
+         * @param element int - The element to insert
+         * @return int[] - A new array with element in it
+         *
+         * @author Lachezar Lazarov
+         */
         int[] result = new int[source.length + 1];
         result[index] = element;
         int sourceIndex = 0;
