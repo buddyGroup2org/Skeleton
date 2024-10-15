@@ -28,8 +28,16 @@ public class ArrayHelpers {
 
     }
 
-    // adds new int to int[] at index 0 while preserving the rest of the original int[]
-    // Georgi Benchev
+
+    /**
+     * adds new int "element" at the beginning of int[] "source"
+     *
+     * @param source int[] - The initial int[]
+     * @param element int - The int that will be added
+     * @return int[] with the same elements as "source" + "element" at index 0
+     *
+     * @author Georgi Benchev
+     */
     public static int[] addFirst(int[] source, int element) {
         int[] newArray = new int[source.length + 1];
 
