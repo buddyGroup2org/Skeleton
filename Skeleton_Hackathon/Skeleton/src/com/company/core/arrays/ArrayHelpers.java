@@ -17,15 +17,11 @@ public class ArrayHelpers {
      */
     public static int[] add(int[] source, int element) {
         int[] newArray = new int[source.length + 1];
-
         for (int i = 0; i <= source.length - 1; i++) {
             newArray[i] = source[i];
         }
-
         newArray[newArray.length - 1] += element;
-
         return newArray;
-
     }
 
 
@@ -86,16 +82,27 @@ public class ArrayHelpers {
      * @author Georgi Benchev
      */
     public static boolean contains(int[] source, int element) {
-        for (int i = 0; i < source.length; i++) {
-            if (source[i] == element) {
+        for (int j : source) {
+            if (j == element) {
                 return true;
             }
         }
         return false;
     }
 
-    // makes copy of int[] "sourceArray" and copies its first "count" elements to int[] "destinationArray"
-    // Georgi Benchev
+
+    /**
+     * Makes a copy of int[] "sourceArray"
+     * and copies its first elements up to index "count"
+     * and puts them in to int[] "destinationArray"
+     *
+     * @param sourceArray int[] - The array from witch we take the numbers.
+     * @param destinationArray int[] - The integer that is updated.
+     * @param count int - The size of the new int[] "destinationArray".
+     * @return void -> destinationArray is updated because int[] is reference type.
+     *
+     * @author Georgi Benchev
+     */
     public static void copy(int[] sourceArray, int[] destinationArray, int count) {
         for (int i = 0; i < Math.min(count, sourceArray.length); i++) {
             destinationArray[i] = sourceArray[i];
