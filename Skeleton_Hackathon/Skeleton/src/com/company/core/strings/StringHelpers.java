@@ -2,10 +2,15 @@ package com.company.core.strings;
 
 @SuppressWarnings("StringConcatenationInLoop")
 public class StringHelpers {
-
+    //Daniel
+    //Length Check:
+    //If the length of source is less than or equal to maxLength, the method simply returns the original string, unchanged.
+    //Initializing StringBuilder to keep the String part.
+    //A loop that adds the characters in result.
+    //If source is longer than maxLength, an ellipsis (...) is added to the end of result.
+    //Return the result.
     public static String abbreviate(String source, int maxLength) {
-        //Daniel
-        if (source.length() <= maxLength) {
+        if (source.length() <= maxLength){
             return source;
         }
         StringBuilder result = new StringBuilder();
@@ -17,32 +22,41 @@ public class StringHelpers {
         }
         return result.toString();
     }
-
+    //Daniel
+    //Checking if the string is empty.
+    //Creating a StringBuilder which copies the contents of the original source string.
+    //Iterate through the symbols If it is the first character, it is converted to an uppercase letter
+    // using Character.toUpperCase() and replaced in StringBuilder using setCharAt().
+    //Return the result.
     public static String capitalize(String source) {
-        //Daniel
-        //Checking if the string is empty.
-        //Creating a StringBuilder which copies the contents of the original source string.
-        //Iterate through the symbols If it is the first character, it is converted to an uppercase letter
-        // using Character.toUpperCase() and replaced in StringBuilder using setCharAt().
-        //Return the result.
-        if (source.length() == 0) {
+
+        if (source.length() == 0){
             return source;
         }
         StringBuilder result = new StringBuilder(source);
         for (int i = 0; i < result.length(); i++) {
-            if (i == 0) {
+            if (i == 0){
                 result.setCharAt(i, Character.toUpperCase(result.charAt(i)));
             }
 
         }
         return result.toString();
     }
-
+    //Concatenates the two strings string1 and string2.
+    //Return the result.
     public static String concat(String string1, String string2) {
-        return null;
+        String result = string1 + string2;
+        return result;
     }
-
+    //Iterates through each character in the source string.
+    //Check if the current element is equal to the symbol.
+    //If it is return true, else return false.
     public static boolean contains(String source, char symbol) {
+        for (int i = 0; i < source.length(); i++) {
+            if (source.charAt(i) == symbol){
+                return true;
+            }
+        }
         return false;
     }
 
@@ -54,8 +68,24 @@ public class StringHelpers {
         return 0;
     }
 
+    //Initialization:
+    //A loop that iterates through source in reverse order, starting from the last character.
+    //Symbol comparison.
+    //Check for character.
+    //Return position.
     public static int lastIndexOf(String source, char symbol) {
-        return 0;
+        boolean isFound = false;
+        int position = 0;
+        for (int i = source.length() - 1; i >= 0; i--) {
+            if (source.charAt(i) == symbol){
+                isFound = true;
+                position = i;
+            }
+        }
+        if (!isFound){
+            position = -1;
+        }
+        return position;
     }
 
     public static String pad(String source, int length, char paddingSymbol) {
@@ -72,20 +102,20 @@ public class StringHelpers {
         int index = 0;
         String result = "";
         int difference = length - source.length();
-        if (source.length() > length) {
+        if(source.length() > length){
             return source;
         }
-        while (index < difference / 2) {
+        while(index < difference/ 2){
             result += paddingSymbol;
             index++;
         }
         index = 0;
         result += source;
-        while (index < difference / 2) {
+        while(index < difference / 2){
             result += paddingSymbol;
             index++;
         }
-        return result;
+        return  result;
     }
 
     public static String padEnd(String source, int length, char paddingSymbol) {
@@ -101,7 +131,7 @@ public class StringHelpers {
          */
         String result = source;
         for (int i = result.length(); i < length; i++) {
-            result += paddingSymbol;
+            result+= paddingSymbol;
         }
         return result;
     }
