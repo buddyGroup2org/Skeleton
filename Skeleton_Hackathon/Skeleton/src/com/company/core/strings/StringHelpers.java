@@ -2,7 +2,7 @@ package com.company.core.strings;
 
 @SuppressWarnings("StringConcatenationInLoop")
 public class StringHelpers {
-    //Daniel
+    //Daniel Kolev
     //Length Check:
     //If the length of source is less than or equal to maxLength, the method simply returns the original string, unchanged.
     //Initializing StringBuilder to keep the String part.
@@ -23,7 +23,7 @@ public class StringHelpers {
         return result.toString();
     }
 
-    //Daniel
+    //Daniel Kolev
     //Checking if the string is empty.
     //Creating a StringBuilder which copies the contents of the original source string.
     //Iterate through the symbols If it is the first character, it is converted to an uppercase letter
@@ -43,13 +43,14 @@ public class StringHelpers {
         }
         return result.toString();
     }
-
+    //Daniel Kolev
     //Concatenates the two strings string1 and string2.
     //Return the result.
     public static String concat(String string1, String string2) {
         String result = string1 + string2;
         return result;
     }
+    //Daniel Kolev
     //Iterates through each character in the source string.
     //Check if the current element is equal to the symbol.
     //If it is return true, else return false.
@@ -105,7 +106,7 @@ public class StringHelpers {
         }
         return -1;
     }
-
+    //Daniel Kolev
     //Initialization:
     //A loop that iterates through source in reverse order, starting from the last character.
     //Symbol comparison.
@@ -192,9 +193,21 @@ public class StringHelpers {
         result += source;
         return result;
     }
-
+    //Daniel Kolev
+    //Initializing a variable that will store the repeating string.
+    //Null check: If times = 0, just returns the original source string.
+    //Initializing a loop that iterating (times) times.
+    //Return the result.
     public static String repeat(String source, int times) {
-        return null;
+        String repeatingWord = "";
+        if (times == 0) {
+            repeatingWord = source;
+            return repeatingWord;
+        }
+        for (int i = 0; i < times; i++) {
+            repeatingWord += source;
+        }
+        return repeatingWord;
     }
 
     public static String reverse(String source) {
@@ -209,9 +222,18 @@ public class StringHelpers {
         return result;
     }
 
-    /* returns a subString "section" from input String "source"
-     starting at index "start"(inclusive) and ending at index "end"(inclusive)
-     Georgi Benchev   */
+
+    /**
+     *  returns a subString "section" from input String "source"
+     *  starting at index "start"(inclusive) and ending at index "end"(inclusive)
+     *
+     * @param source The string that will be cut.
+     * @param start The start(inclusive) of the new string.
+     * @param end The end(inclusive) of the new string.
+     * @return the result in string "section".
+     *
+     * @author Georgi Benchev
+     */
     public static String section(String source, int start, int end) {
         String section = "";
         for (int i = start; i <= end; i++) {
@@ -220,8 +242,16 @@ public class StringHelpers {
         return section;
     }
 
-    // checks if the first char of given string "source" is the same as char "target"
-    // Georgi Benchev
+
+    /**
+     *  checks if string "source" starts with char "target"
+     *
+     * @param source The string that will be checked.
+     * @param target The char that will be used for the check
+     * @return A boolean - true if "source" starts with "target" and false if not
+     *
+     * @author Georgi Benchev
+     */
     public static boolean startsWith(String source, char target) {
         if (!source.isEmpty() && source.charAt(0) == target) {
             return true;
