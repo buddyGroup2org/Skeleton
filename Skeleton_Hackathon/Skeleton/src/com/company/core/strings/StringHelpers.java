@@ -10,7 +10,7 @@ public class StringHelpers {
     //If source is longer than maxLength, an ellipsis (...) is added to the end of result.
     //Return the result.
     public static String abbreviate(String source, int maxLength) {
-        if (source.length() <= maxLength){
+        if (source.length() <= maxLength) {
             return source;
         }
         StringBuilder result = new StringBuilder();
@@ -22,6 +22,7 @@ public class StringHelpers {
         }
         return result.toString();
     }
+
     //Daniel
     //Checking if the string is empty.
     //Creating a StringBuilder which copies the contents of the original source string.
@@ -30,18 +31,19 @@ public class StringHelpers {
     //Return the result.
     public static String capitalize(String source) {
 
-        if (source.length() == 0){
+        if (source.length() == 0) {
             return source;
         }
         StringBuilder result = new StringBuilder(source);
         for (int i = 0; i < result.length(); i++) {
-            if (i == 0){
+            if (i == 0) {
                 result.setCharAt(i, Character.toUpperCase(result.charAt(i)));
             }
 
         }
         return result.toString();
     }
+
     //Concatenates the two strings string1 and string2.
     //Return the result.
     public static String concat(String string1, String string2) {
@@ -61,11 +63,47 @@ public class StringHelpers {
     }
 
     public static boolean endsWith(String source, char target) {
+        /**
+         * Checks if the given String <code>source</code> ends with the given char <code>target</code>.
+         *
+         * @param String source - a string from which we read its last element
+         * @param char target The target which we need to check if it is the last of char of the string
+         * @return A boolean of true or false, whether its the target or not.
+         *
+         * @author Ivan Ivanov
+         */
+        if (source.isEmpty()){
+            return false;
+        }
+        if (target == source.charAt(source.length() - 1)){
+            return true;
+        }
         return false;
     }
 
     public static int firstIndexOf(String source, char target) {
-        return 0;
+        /**
+         * Searches first appearance of <code>char</code> index in String <code>source</code>
+         * and returns its int position.
+         *
+         * @param String source a string from which we read its elements
+         * @param char element - The element which we need to search in the string
+         * @return An int of which index is the first appearance of target in the string.
+         *
+         * @author Ivan Ivanov
+         */
+        boolean isFound = false;
+        int position = 0;
+        for (int i = 0; i < source.length(); i++) {
+            if (target == source.charAt(i)) {
+                isFound = true;
+                position = i;
+            }
+        }
+        if (isFound) {
+            return position;
+        }
+        return -1;
     }
 
     //Initialization:
@@ -102,20 +140,20 @@ public class StringHelpers {
         int index = 0;
         String result = "";
         int difference = length - source.length();
-        if(source.length() > length){
+        if (source.length() > length) {
             return source;
         }
-        while(index < difference/ 2){
+        while (index < difference / 2) {
             result += paddingSymbol;
             index++;
         }
         index = 0;
         result += source;
-        while(index < difference / 2){
+        while (index < difference / 2) {
             result += paddingSymbol;
             index++;
         }
-        return  result;
+        return result;
     }
 
     public static String padEnd(String source, int length, char paddingSymbol) {
@@ -131,7 +169,7 @@ public class StringHelpers {
          */
         String result = source;
         for (int i = result.length(); i < length; i++) {
-            result+= paddingSymbol;
+            result += paddingSymbol;
         }
         return result;
     }
@@ -185,8 +223,16 @@ public class StringHelpers {
         return section;
     }
 
-    // checks if the first char of given string "source" is the same as char "target"
-    // Georgi Benchev
+
+    /**
+     *  checks if string "source" starts with char "target"
+     *
+     * @param source The string that will be checked.
+     * @param target The char that will be used for the check
+     * @return A boolean - true if "source" starts with "target" and false if not
+     *
+     * @author Georgi Benchev
+     */
     public static boolean startsWith(String source, char target) {
         if (!source.isEmpty() && source.charAt(0) == target) {
             return true;
