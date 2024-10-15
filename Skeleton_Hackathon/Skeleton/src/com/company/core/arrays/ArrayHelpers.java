@@ -141,16 +141,16 @@ public class ArrayHelpers {
     }
 
 
+    /**
+     * Finds the first index of <code>target<code/> within <code>source<code/>.
+     *
+     * @param source int[] - The array to check in
+     * @param target int - The element to check for
+     * @return int - The first index of target within source, otherwise, -1
+     *
+     * @author Lachezar Lazarov
+     */
     public static int firstIndexOf(int[] source, int target) {
-        /**
-         * Finds the first index of <code>target<code/> within <code>source<code/>.
-         *
-         * @param source int[] - The array to check in
-         * @param target int - The element to check for
-         * @return int - The first index of target within source, otherwise, -1
-         *
-         * @author Lachezar Lazarov
-         */
         int result = -1;
         for (int i = 0; i < source.length; i++) {
             if (source[i] == target) {
@@ -161,17 +161,18 @@ public class ArrayHelpers {
         return result;
     }
 
+
+    /**
+     * Inserts <code>element<code/>> at index <code>index<code/>> in <code>source<code/>>.
+     *
+     * @param source int[] - The array to insert in
+     * @param index int - The index to insert at
+     * @param element int - The element to insert
+     * @return int[] - A new array with element in it
+     *
+     * @author Lachezar Lazarov
+     */
     public static int[] insert(int[] source, int index, int element) {
-        /**
-         * Inserts <code>element<code/>> at index <code>index<code/>> in <code>source<code/>>.
-         *
-         * @param source int[] - The array to insert in
-         * @param index int - The index to insert at
-         * @param element int - The element to insert
-         * @return int[] - A new array with element in it
-         *
-         * @author Lachezar Lazarov
-         */
         int[] result = new int[source.length + 1];
         result[index] = element;
         int sourceIndex = 0;
@@ -209,11 +210,9 @@ public class ArrayHelpers {
     // Chavdar Tsvetkov
 
     public static int lastIndexOf(int[] source, int target) {
-
         if (source.length == 0) {
             return -1;
         }
-
         int lastIndex = 0;
         boolean flag = false;
         for (int i = 0; i <= source.length - 1; i++) {
@@ -221,55 +220,54 @@ public class ArrayHelpers {
                 lastIndex = i;
                 flag = true;
             }
-
         }
-
         if (flag) {
             return lastIndex;
         } else {
             return -1;
         }
-
     }
 
 
+    /**
+     * Removes all occurrences of <code>element</code> in array <code>source</code>.
+     *
+     * @param source int[] - an array from which we read its elements
+     * @param element int - The element which we need to remove
+     * @return An array that represents the version of the array source
+     * which removes all occurrences of element n in it.
+     *
+     * @author Ivan Ivanov
+     */
     public static int[] removeAllOccurrences(int[] source, int element) {
-        /**
-         * Removes all occurrences of <code>element</code> in array <code>source</code>.
-         *
-         * @param int[] source an array from which we read its elements
-         * @param int element The element which we need to remove
-         * @return An array that represents the version of the array source
-         * which removes all occurrences of element n in it.
-         *
-         * @author Ivan Ivanov
-         */
         int count = 0;
-        for (int i = 0; i < source.length; i++) {
-            if (source[i] == element) {
+        for (int elementInLoop : source) {
+            if (elementInLoop == element) {
                 count++;
             }
         }
         int[] result = new int[source.length - count];
         int index = 0;
-        for (int i = 0; i < source.length; i++) {
-            if (source[i] != element) {
-                result[index++] = source[i];
+        for (int elementFromSource : source) {
+            if (elementFromSource != element) {
+                result[index++] = elementFromSource;
             }
         }
         return result;
     }
 
+
+    /***
+     * Reverses array <code>arrayToReverse</code> to the same array.
+     *
+     * @param arrayToReverse int[] - The array that needs to be reversed
+     * Reverses the contents of ArrayToRevers by creating a new array in the method and then
+     * overwriting the contents of the original array.
+     *
+     * @author Ivan Ivanov
+     **/
     public static void reverse(int[] arrayToReverse) {
-        /***
-         * Reverses array <code>arrayToReverse</code> to the same array.
-         *
-         * @param int[] arrayToReverse as the array that needs to be reversed
-         * Reverses the contents of ArrayToRevers by creating a new array in the method and then
-         * overwriting the contents of the original array.
-         *
-         * @author Ivan Ivanov
-         **/
+
         int[] result = new int[arrayToReverse.length];
         for (int i = arrayToReverse.length - 1, j = 0; i >= 0 && j < result.length; i--, j++) {
             result[j] = arrayToReverse[i];
