@@ -2,9 +2,15 @@ package com.company.core.strings;
 
 @SuppressWarnings("StringConcatenationInLoop")
 public class StringHelpers {
-
+    //Daniel
+    //Length Check:
+    //If the length of source is less than or equal to maxLength, the method simply returns the original string, unchanged.
+    //Initializing StringBuilder to keep the String part.
+    //A loop that adds the characters in result.
+    //If source is longer than maxLength, an ellipsis (...) is added to the end of result.
+    //Return the result.
     public static String abbreviate(String source, int maxLength) {
-        //Daniel
+
         if (source.length() <= maxLength){
             return source;
         }
@@ -17,14 +23,14 @@ public class StringHelpers {
         }
         return result.toString();
     }
-
+    //Daniel
+    //Checking if the string is empty.
+    //Creating a StringBuilder which copies the contents of the original source string.
+    //Iterate through the symbols If it is the first character, it is converted to an uppercase letter
+    // using Character.toUpperCase() and replaced in StringBuilder using setCharAt().
+    //Return the result.
     public static String capitalize(String source) {
-        //Daniel
-        //Checking if the string is empty.
-        //Creating a StringBuilder which copies the contents of the original source string.
-        //Iterate through the symbols If it is the first character, it is converted to an uppercase letter
-        // using Character.toUpperCase() and replaced in StringBuilder using setCharAt().
-        //Return the result.
+
         if (source.length() == 0){
             return source;
         }
@@ -37,9 +43,12 @@ public class StringHelpers {
         }
         return result.toString();
     }
-
+    //Concatenates the two strings string1 and string2.
+    //Return the result.
     public static String concat(String string1, String string2) {
-        return null;
+
+        String result = string1 + string2;
+        return result;
     }
 
     public static boolean contains(String source, char symbol) {
