@@ -151,8 +151,16 @@ public class StringHelpers {
         return section;
     }
 
-    // checks if the first char of given string "source" is the same as char "target"
-    // Georgi Benchev
+
+    /**
+     *  checks if string "source" starts with char "target"
+     *
+     * @param source The string that will be checked.
+     * @param target The char that will be used for the check
+     * @return A boolean - true if "source" starts with "target", false if not
+     *
+     * @author Georgi Benchev
+     */
     public static boolean startsWith(String source, char target) {
         if (!source.isEmpty() && source.charAt(0) == target) {
             return true;
