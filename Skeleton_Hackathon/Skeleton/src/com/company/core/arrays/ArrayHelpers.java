@@ -91,6 +91,7 @@ public class ArrayHelpers {
 
     public static int firstIndexOf(int[] source, int target) {
         return 0;
+
     }
 
     public static int[] insert(int[] source, int index, int element) {
