@@ -81,7 +81,21 @@ public class ArrayHelpers {
     }
 
     public static int[] removeAllOccurrences(int[] source, int element) {
-        return new int[1];
+        //Ivan Ivanov
+        int count = 0;
+        for (int i = 0; i < source.length; i++) {
+            if (source[i] == element) {
+                count++;
+            }
+        }
+        int[] result = new int[source.length - count];
+        int index = 0;
+        for (int i = 0; i < source.length; i++) {
+            if (source[i] != element) {
+                result[index++] = source[i];
+            }
+        }
+        return result;
     }
 
     public static void reverse(int[] arrayToReverse) {
