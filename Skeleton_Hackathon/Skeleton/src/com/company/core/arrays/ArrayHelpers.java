@@ -140,7 +140,6 @@ public class ArrayHelpers {
         }
     }
 
-
     /**
      * Finds the first index of <code>target<code/> within <code>source<code/>.
      *
@@ -210,9 +209,11 @@ public class ArrayHelpers {
     // Chavdar Tsvetkov
 
     public static int lastIndexOf(int[] source, int target) {
+
         if (source.length == 0) {
             return -1;
         }
+
         int lastIndex = 0;
         boolean flag = false;
         for (int i = 0; i <= source.length - 1; i++) {
@@ -220,20 +221,22 @@ public class ArrayHelpers {
                 lastIndex = i;
                 flag = true;
             }
+
         }
+
         if (flag) {
             return lastIndex;
         } else {
             return -1;
         }
-    }
 
+    }
 
     /**
      * Removes all occurrences of <code>element</code> in array <code>source</code>.
      *
-     * @param source int[] - an array from which we read its elements
-     * @param element int - The element which we need to remove
+     * @param source  an array[] from which we read its elements
+     * @param element  The element which we need to remove
      * @return An array that represents the version of the array source
      * which removes all occurrences of element n in it.
      *
@@ -241,16 +244,16 @@ public class ArrayHelpers {
      */
     public static int[] removeAllOccurrences(int[] source, int element) {
         int count = 0;
-        for (int elementInLoop : source) {
-            if (elementInLoop == element) {
+        for (int i = 0; i < source.length; i++) {
+            if (source[i] == element) {
                 count++;
             }
         }
         int[] result = new int[source.length - count];
         int index = 0;
-        for (int elementFromSource : source) {
-            if (elementFromSource != element) {
-                result[index++] = elementFromSource;
+        for (int i = 0; i < source.length; i++) {
+            if (source[i] != element) {
+                result[index++] = source[i];
             }
         }
         return result;

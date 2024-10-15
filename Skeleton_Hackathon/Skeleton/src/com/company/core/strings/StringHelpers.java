@@ -2,6 +2,7 @@ package com.company.core.strings;
 
 @SuppressWarnings("StringConcatenationInLoop")
 public class StringHelpers {
+
     //Daniel Kolev
     //Length Check:
     //If the length of source is less than or equal to maxLength, the method simply returns the original string, unchanged.
@@ -43,6 +44,7 @@ public class StringHelpers {
         }
         return result.toString();
     }
+
     //Daniel Kolev
     //Concatenates the two strings string1 and string2.
     //Return the result.
@@ -50,6 +52,7 @@ public class StringHelpers {
         String result = string1 + string2;
         return result;
     }
+
     //Daniel Kolev
     //Iterates through each character in the source string.
     //Check if the current element is equal to the symbol.
@@ -63,16 +66,16 @@ public class StringHelpers {
         return false;
     }
 
+    /**
+     * Checks if the given String <code>source</code> ends with the given char <code>target</code>.
+     *
+     * @param source - a string from which we read its last element
+     * @param target - The target which we need to check if it is the last of char of the string
+     * @return A boolean of true or false, whether its the target or not.
+     *
+     * @author Ivan Ivanov
+     */
     public static boolean endsWith(String source, char target) {
-        /**
-         * Checks if the given String <code>source</code> ends with the given char <code>target</code>.
-         *
-         * @param String source - a string from which we read its last element
-         * @param char target The target which we need to check if it is the last of char of the string
-         * @return A boolean of true or false, whether its the target or not.
-         *
-         * @author Ivan Ivanov
-         */
         if (source.isEmpty()){
             return false;
         }
@@ -82,17 +85,17 @@ public class StringHelpers {
         return false;
     }
 
+    /**
+     * Searches first appearance of <code>char</code> index in String <code>source</code>
+     * and returns its int position.
+     *
+     * @param source a string from which we read its elements
+     * @param target char element - The element which we need to search in the string
+     * @return An int of which index is the first appearance of target in the string.
+     *
+     * @author Ivan Ivanov
+     */
     public static int firstIndexOf(String source, char target) {
-        /**
-         * Searches first appearance of <code>char</code> index in String <code>source</code>
-         * and returns its int position.
-         *
-         * @param String source a string from which we read its elements
-         * @param char element - The element which we need to search in the string
-         * @return An int of which index is the first appearance of target in the string.
-         *
-         * @author Ivan Ivanov
-         */
         boolean isFound = false;
         int position = 0;
         for (int i = 0; i < source.length(); i++) {
@@ -106,6 +109,7 @@ public class StringHelpers {
         }
         return -1;
     }
+
     //Daniel Kolev
     //Initialization:
     //A loop that iterates through source in reverse order, starting from the last character.
@@ -127,17 +131,18 @@ public class StringHelpers {
         return position;
     }
 
+    /**
+     * Pads string on the left and right sides if it's shorter than <code>length</code>.
+     *
+     * @param source String - The string to pad
+     * @param length int - The length of the string to achieve
+     * @param paddingSymbol char - The character used as padding
+     * @return The padded string
+     *
+     * @author Lachezar Lazarov
+     */
     public static String pad(String source, int length, char paddingSymbol) {
-        /**
-         * Pads string on the left and right sides if it's shorter than <code>length</code>.
-         *
-         * @param source String - The string to pad
-         * @param length int - The length of the string to achieve
-         * @param target char - The character used as padding
-         * @return The padded string
-         *
-         * @author Lachezar Lazarov
-         */
+
         int index = 0;
         String result = "";
         int difference = length - source.length();
@@ -157,17 +162,17 @@ public class StringHelpers {
         return result;
     }
 
+    /**
+     * Pads <code>source</code> on the right side with <code>paddingSymbol</code> enough times to reach length <code>length</code>.
+     *
+     * @param source String - The string to pad
+     * @param length int - The length of the string to achieve
+     * @param paddingSymbol char - The character used as padding
+     * @return The padded string
+     *
+     * @author Lachezar Lazarov
+     */
     public static String padEnd(String source, int length, char paddingSymbol) {
-        /**
-         * Pads <code>source</code> on the right side with <code>paddingSymbol</code> enough times to reach length <code>length</code>.
-         *
-         * @param source String - The string to pad
-         * @param length int - The length of the string to achieve
-         * @param paddingSymbol char - The character used as padding
-         * @return The padded string
-         *
-         * @author Lachezar Lazarov
-         */
         String result = source;
         for (int i = result.length(); i < length; i++) {
             result += paddingSymbol;
@@ -175,17 +180,17 @@ public class StringHelpers {
         return result;
     }
 
+    /**
+     * Pads <code>source</code> on the left side with <code>paddingSymbol</code> enough times to reach length <code>length</code>.
+     *
+     * @param source String - The string to pad
+     * @param length int - The length of the string to achieve
+     * @param paddingSymbol char - The character used as padding
+     * @return The padded string
+     *
+     * @author Lachezar Lazarov
+     */
     public static String padStart(String source, int length, char paddingSymbol) {
-        /**
-         * Pads <code>source</code> on the left side with <code>paddingSymbol</code> enough times to reach length <code>length</code>.
-         *
-         * @param source String - The string to pad
-         * @param length int - The length of the string to achieve
-         * @param paddingSymbol char - The character used as padding
-         * @return The padded string
-         *
-         * @author Lachezar Lazarov
-         */
         String result = "";
         for (int i = 0; i < length - source.length(); i++) {
             result += paddingSymbol;
@@ -193,6 +198,7 @@ public class StringHelpers {
         result += source;
         return result;
     }
+
     //Daniel Kolev
     //Initializing a variable that will store the repeating string.
     //Null check: If times = 0, just returns the original source string.
@@ -210,6 +216,15 @@ public class StringHelpers {
         return repeatingWord;
     }
 
+    /**
+     *  Reverses the elements of string "source"
+     *
+     * @param source The string that will be reversed.
+     *
+     * @return the reversed result of string "source".
+     *
+     * @author Ivan Ivanov
+     */
     public static String reverse(String source) {
         char[] reversedSource = new char[source.length()];
         for (int i = source.length() - 1 , j = 0; i >= 0 && j < source.length(); i--, j++) {
