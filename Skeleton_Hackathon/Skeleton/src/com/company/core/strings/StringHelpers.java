@@ -3,13 +3,16 @@ package com.company.core.strings;
 @SuppressWarnings("StringConcatenationInLoop")
 public class StringHelpers {
 
-    //Daniel Kolev
-    //Length Check:
-    //If the length of source is less than or equal to maxLength, the method simply returns the original string, unchanged.
-    //Initializing StringBuilder to keep the String part.
-    //A loop that adds the characters in result.
-    //If source is longer than maxLength, an ellipsis (...) is added to the end of result.
-    //Return the result.
+
+    /**
+     * Abbreviates a "source" using ellipses.
+     *
+     * @param source String that will be used.
+     * @param maxLength int that will be the max length of the new string.
+     * @return String - The abbreviated String.
+     *
+     * @author Daniel Kolev
+     */
     public static String abbreviate(String source, int maxLength) {
         if (source.length() <= maxLength) {
             return source;
@@ -24,12 +27,16 @@ public class StringHelpers {
         return result.toString();
     }
 
-    //Daniel Kolev
-    //Checking if the string is empty.
-    //Creating a StringBuilder which copies the contents of the original source string.
-    //Iterate through the symbols If it is the first character, it is converted to an uppercase letter
-    // using Character.toUpperCase() and replaced in StringBuilder using setCharAt().
-    //Return the result.
+
+    /**
+     * Capitalizes a string changing the first character to upper case.
+     * No other characters are changed. If source is empty returns empty string.
+     *
+     * @param source String that will be updated.
+     * @return String - The capitalized string or empty string if "source" is empty.
+     *
+     * @author Daniel Kolev
+     */
     public static String capitalize(String source) {
 
         if (source.length() == 0) {
@@ -45,26 +52,40 @@ public class StringHelpers {
         return result.toString();
     }
 
-    //Daniel Kolev
-    //Concatenates the two strings string1 and string2.
-    //Return the result.
+
+    /**
+     * Concatenates the two strings "string1" and "string2".
+     *
+     * @param string1 The first string that will be used.
+     * @param string2 The second string that will be used.
+     * @return String that represents the concatenation of string1 followed by string2's characters.
+     *
+     * @author Daniel Kolev
+     */
     public static String concat(String string1, String string2) {
         String result = string1 + string2;
         return result;
     }
 
-    //Daniel Kolev
-    //Iterates through each character in the source string.
-    //Check if the current element is equal to the symbol.
-    //If it is return true, else return false.
+
+    /**
+     * Check for character "symbol" in string "source"
+     *
+     * @param source The string that will be used.
+     * @param symbol The char that will be located.
+     * @return boolean If "source" contains "symbol" return true, else return false.
+     *
+     * @author Daniel Kolev
+     */
     public static boolean contains(String source, char symbol) {
         for (int i = 0; i < source.length(); i++) {
-            if (source.charAt(i) == symbol){
+            if (source.charAt(i) == symbol) {
                 return true;
             }
         }
         return false;
     }
+
 
     /**
      * Checks if the given String <code>source</code> ends with the given char <code>target</code>.
@@ -72,18 +93,18 @@ public class StringHelpers {
      * @param source - a string from which we read its last element
      * @param target - The target which we need to check if it is the last of char of the string
      * @return A boolean of true or false, whether its the target or not.
-     *
      * @author Ivan Ivanov
      */
     public static boolean endsWith(String source, char target) {
-        if (source.isEmpty()){
+        if (source.isEmpty()) {
             return false;
         }
-        if (target == source.charAt(source.length() - 1)){
+        if (target == source.charAt(source.length() - 1)) {
             return true;
         }
         return false;
     }
+
 
     /**
      * Searches first appearance of <code>char</code> index in String <code>source</code>
@@ -92,7 +113,6 @@ public class StringHelpers {
      * @param source a string from which we read its elements
      * @param target char element - The element which we need to search in the string
      * @return An int of which index is the first appearance of target in the string.
-     *
      * @author Ivan Ivanov
      */
     public static int firstIndexOf(String source, char target) {
@@ -110,35 +130,39 @@ public class StringHelpers {
         return -1;
     }
 
-    //Daniel Kolev
-    //Initialization:
-    //A loop that iterates through source in reverse order, starting from the last character.
-    //Symbol comparison.
-    //Check for character.
-    //Return position.
+
+    /**
+     * Check for character "symbol" in string "source"
+     *
+     * @param source The string that will be used.
+     * @param symbol The char that will be located.
+     * @return int - The last position of "symbol" in string "source".
+     *
+     * @author Daniel Kolev
+     */
     public static int lastIndexOf(String source, char symbol) {
         boolean isFound = false;
         int position = 0;
         for (int i = source.length() - 1; i >= 0; i--) {
-            if (source.charAt(i) == symbol){
+            if (source.charAt(i) == symbol) {
                 isFound = true;
                 position = i;
             }
         }
-        if (!isFound){
+        if (!isFound) {
             position = -1;
         }
         return position;
     }
 
+
     /**
      * Pads string on the left and right sides if it's shorter than <code>length</code>.
      *
-     * @param source String - The string to pad
-     * @param length int - The length of the string to achieve
+     * @param source        String - The string to pad
+     * @param length        int - The length of the string to achieve
      * @param paddingSymbol char - The character used as padding
      * @return The padded string
-     *
      * @author Lachezar Lazarov
      */
     public static String pad(String source, int length, char paddingSymbol) {
@@ -162,14 +186,14 @@ public class StringHelpers {
         return result;
     }
 
+
     /**
      * Pads <code>source</code> on the right side with <code>paddingSymbol</code> enough times to reach length <code>length</code>.
      *
-     * @param source String - The string to pad
-     * @param length int - The length of the string to achieve
+     * @param source        String - The string to pad
+     * @param length        int - The length of the string to achieve
      * @param paddingSymbol char - The character used as padding
      * @return The padded string
-     *
      * @author Lachezar Lazarov
      */
     public static String padEnd(String source, int length, char paddingSymbol) {
@@ -180,14 +204,14 @@ public class StringHelpers {
         return result;
     }
 
+
     /**
      * Pads <code>source</code> on the left side with <code>paddingSymbol</code> enough times to reach length <code>length</code>.
      *
-     * @param source String - The string to pad
-     * @param length int - The length of the string to achieve
+     * @param source        String - The string to pad
+     * @param length        int - The length of the string to achieve
      * @param paddingSymbol char - The character used as padding
      * @return The padded string
-     *
      * @author Lachezar Lazarov
      */
     public static String padStart(String source, int length, char paddingSymbol) {
@@ -199,11 +223,16 @@ public class StringHelpers {
         return result;
     }
 
-    //Daniel Kolev
-    //Initializing a variable that will store the repeating string.
-    //Null check: If times = 0, just returns the original source string.
-    //Initializing a loop that iterating (times) times.
-    //Return the result.
+
+    /**
+     * Repeats the given "source" "times" times
+     *
+     * @param source The string that will be repeated.
+     * @param times the number of repetitions.
+     * @return String - returns the "source" repeated "times" times and saved in a new String.
+     *
+     * @author Daniel Kolev
+     */
     public static String repeat(String source, int times) {
         String repeatingWord = "";
         if (times == 0) {
@@ -216,22 +245,21 @@ public class StringHelpers {
         return repeatingWord;
     }
 
+
     /**
-     *  Reverses the elements of string "source"
+     * Reverses the elements of string "source"
      *
      * @param source The string that will be reversed.
-     *
      * @return the reversed result of string "source".
-     *
      * @author Ivan Ivanov
      */
     public static String reverse(String source) {
         char[] reversedSource = new char[source.length()];
-        for (int i = source.length() - 1 , j = 0; i >= 0 && j < source.length(); i--, j++) {
+        for (int i = source.length() - 1, j = 0; i >= 0 && j < source.length(); i--, j++) {
             reversedSource[i] = source.charAt(j);
         }
         String result = "";
-        for (int i = 0; i < reversedSource.length ; i++) {
+        for (int i = 0; i < reversedSource.length; i++) {
             result = result + reversedSource[i];
         }
         return result;
@@ -239,14 +267,13 @@ public class StringHelpers {
 
 
     /**
-     *  returns a subString "section" from input String "source"
-     *  starting at index "start"(inclusive) and ending at index "end"(inclusive)
+     * returns a subString "section" from input String "source"
+     * starting at index "start"(inclusive) and ending at index "end"(inclusive)
      *
      * @param source The string that will be cut.
-     * @param start The start(inclusive) of the new string.
-     * @param end The end(inclusive) of the new string.
+     * @param start  The start(inclusive) of the new string.
+     * @param end    The end(inclusive) of the new string.
      * @return the result in string "section".
-     *
      * @author Georgi Benchev
      */
     public static String section(String source, int start, int end) {
@@ -259,19 +286,19 @@ public class StringHelpers {
 
 
     /**
-     *  checks if string "source" starts with char "target"
+     * checks if string "source" starts with char "target"
      *
      * @param source The string that will be checked.
      * @param target The char that will be used for the check
      * @return A boolean - true if "source" starts with "target" and false if not
-     *
      * @author Georgi Benchev
      */
     public static boolean startsWith(String source, char target) {
         if (!source.isEmpty() && source.charAt(0) == target) {
             return true;
+        } else {
+            return false;
         }
-        return false;
     }
 
 }

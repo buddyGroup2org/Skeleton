@@ -23,6 +23,7 @@ public class ArrayHelpers {
         return newArray;
     }
 
+
     /**
      * adds new int "element" at the beginning of int[] "source"
      *
@@ -42,6 +43,7 @@ public class ArrayHelpers {
 
         return newArray;
     }
+
 
     /**
      * Adds all "elements" to the end of targeted int[] "source"
@@ -84,6 +86,7 @@ public class ArrayHelpers {
         return false;
     }
 
+
     /**
      * Makes a copy of int[] "sourceArray"
      * and copies its first elements up to index "count"
@@ -100,6 +103,7 @@ public class ArrayHelpers {
             destinationArray[i] = sourceArray[i];
         }
     }
+
 
     /**
      * Copies "count" elements from int[] "sourceArray" starting at index "sourceStartIndex"
@@ -120,6 +124,7 @@ public class ArrayHelpers {
         }
     }
 
+
     /**
      * fills every int inside int[] "source" with int "element"
      *
@@ -134,6 +139,7 @@ public class ArrayHelpers {
             source[i] = element;
         }
     }
+
 
     /**
      * Finds the first index of <code>target<code/> within <code>source<code/>.
@@ -154,6 +160,7 @@ public class ArrayHelpers {
         }
         return result;
     }
+
 
     /**
      * Inserts <code>element<code/>> at index <code>index<code/>> in <code>source<code/>>.
@@ -179,9 +186,17 @@ public class ArrayHelpers {
         return result;
     }
 
-    // Checks if the input index is valid in the array
-    // If the array is empty, result should be "false"
-    // Chavdar Tsvetkov
+
+    /**
+     * Checks if the input index is valid in the array
+     *
+     * @param source int[] - The array to search the int in.
+     * @param index int - The int that will be searched for.
+     * @return boolean - returns true if the element is found inside int[]
+     * and false if it is nor or if the array is empty.
+     *
+     * @author Chavdar Tsvetkov
+     */
     public static boolean isValidIndex(int[] source, int index) {
         if (source.length == 0) {
             return false;
@@ -195,10 +210,17 @@ public class ArrayHelpers {
         return false;
     }
 
-    // Returns the last index of the array
-    // If the array is empty, result should be -1
-    // If the target is out of bounds, result should be -1
-    // Chavdar Tsvetkov
+
+    /**
+     * Returns the last index of "target" in the array "source".
+     *
+     * @param source int[] - The targeted array.
+     * @param target int - The int that will be searched.
+     * @return int - The last index of "target" within "source",
+     * if no such "target"is found return -1
+     *
+     * @author Chavdar Tsvetkov
+     */
     public static int lastIndexOf(int[] source, int target) {
 
         if (source.length == 0) {
@@ -222,6 +244,7 @@ public class ArrayHelpers {
         }
 
     }
+
 
     /**
      * Removes all occurrences of <code>element</code> in array <code>source</code>.
@@ -250,6 +273,7 @@ public class ArrayHelpers {
         return result;
     }
 
+
     /***
      * Reverses array <code>arrayToReverse</code> to the same array.
      *
@@ -270,48 +294,41 @@ public class ArrayHelpers {
         }
     }
 
-    // Returns a clipped version of the originally given array.
-    // If the endIndex is out of bounds, the array will only be clipped from the start.
-    // If the startIndex is out of bounds, the array will return the same as given.
-    // If there are 0 elements in the array, the same array will be returned.
-    // Chavdar Tsvetkov
+
+    /**
+     * Takes a section from existing int[] and puts it in a new int[]
+     *
+     * @param source int[] - The targeted array.
+     * @param startIndex int - The int that will be searched.
+     * @param endIndex int - The int that will be searched.
+     * @return int[] - Returns a new int[] from source,
+     * starting from "startIndex" and ending at "endIndex"
+     *
+     * @author Chavdar Tsvetkov
+     */
     public static int[] section(int[] source, int startIndex, int endIndex) {
 
         if (source.length == 0) {
             return source;
         }
-
-
         if (endIndex >= source.length || endIndex < 0) {
-
             int count = 0;
-
             int[] shorterArr = new int[source.length - startIndex];
-
             for (int i = 0; i <= shorterArr.length - 1; i++) {
                 shorterArr[i] += source[startIndex + count];
                 count++;
             }
             return shorterArr;
         }
-
         if (startIndex < 0 || startIndex >= source.length) {
             return source;
         }
-
-
         int count = 0;
         int[] newArr = new int[(endIndex - startIndex) + 1];
-
         for (int i = startIndex; i <= endIndex; i++) {
-
-
             newArr[count] += source[i];
-
             count++;
-
         }
         return newArr;
-
     }
 }
